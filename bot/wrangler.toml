@@ -1,0 +1,15 @@
+name = "vicecity-alerts"
+main = "worker.mjs"
+compatibility_date = "2025-06-01"
+workers_dev = true
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+MIN_BUY_USD = "100"
+MIN_SELL_USD = "200"
+LEADERBOARD_HOURS = "6"
+
+[observability]
+enabled = true
