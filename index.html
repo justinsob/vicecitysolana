@@ -212,11 +212,6 @@ h1{animation:flick 7s infinite}
 .has3d .fx{display:block}
 .fx::after{content:"";position:absolute;inset:-100%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .6s steps(4) infinite}
 @keyframes grain{25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-4%)}75%{transform:translate(-2%,-2%)}}
-.bars i{position:fixed;left:0;right:0;height:9vh;background:#000;z-index:30;pointer-events:none;transition:transform .8s cubic-bezier(.2,.9,.2,1)}
-.bars i:first-child{top:84px;transform:translateY(-101%)}
-.bars i:last-child{bottom:0;transform:translateY(101%)}
-.cine .bars i{transform:none}
-.cine .loc{bottom:calc(9vh + 18px)}
 
 .stamp{position:fixed;inset:0;z-index:60;display:grid;place-items:center;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,rgba(120,0,0,.25),rgba(60,0,0,.75))}
 .stamp span{font-family:Anton,Impact,sans-serif;font-size:clamp(70px,17vw,230px);letter-spacing:.04em;color:#ff2a2a;text-shadow:0 0 30px rgba(255,0,0,.8),6px 6px 0 #000;transform:scale(2.2);opacity:0}
@@ -273,7 +268,6 @@ h1{animation:flick 7s infinite}
 <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
 <div class="loc" id="loc" aria-hidden="true"></div>
 <div class="fx" aria-hidden="true"></div>
-<div class="bars" aria-hidden="true"><i></i><i></i></div>
 <div class="stamp" id="stamp" aria-hidden="true"><span>FUMBLED</span></div>
 
 <nav>
