@@ -81,7 +81,7 @@ h1{font-family:"Mr Dafoe",cursive;font-weight:400;font-size:clamp(84px,17vw,210p
   text-shadow:0 0 6px #fff,0 0 22px #ff3ea5,0 0 60px #ff3ea5,5px 6px 0 #2a0a4a}
 .tag{font-size:clamp(16px,2.2vw,20px);max-width:640px;margin:34px auto 22px;padding:12px 18px;background:rgba(11,6,24,.72);border:1px solid rgba(255,255,255,.14);border-radius:10px;backdrop-filter:blur(6px)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.hero .btn:not(.primary):not(.discord){background:rgba(11,6,24,.78)}
+.hero .btn:not(.primary):not(.discord):not(.xbtn){background:rgba(11,6,24,.78)}
 
 /* sections */
 section{padding:84px 0;border-top:1px solid var(--line)}
@@ -222,7 +222,12 @@ h1{animation:flick 7s infinite}
 
 /* discord */
 .btn.discord{background:linear-gradient(180deg,#6d79ff,#4a55e8);border-color:#9aa3ff;color:#fff;box-shadow:0 6px 26px rgba(88,101,242,.5)}
-.discord-hero{display:flex;justify-content:center;margin:0 0 14px}
+.discord-hero{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:0 0 14px}
+.btn.xbtn{display:inline-flex;align-items:center;gap:8px;background:#000;border-color:#3a3a3a;color:#fff;box-shadow:0 6px 26px rgba(0,0,0,.5)}
+.btn.xbtn:hover{border-color:#fff}
+.discord-hero .btn.xbtn{font-size:clamp(15px,2.2vw,19px);padding:18px 30px;border-radius:10px}
+.comm-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.comm-sec .btn.xbtn{font-size:clamp(18px,3vw,26px);padding:24px 40px;border-radius:14px}
 .discord-hero .btn{font-size:clamp(15px,2.2vw,19px);padding:18px 34px;border-radius:10px;animation:glowD 2.4s ease-in-out infinite}
 @keyframes glowD{50%{box-shadow:0 8px 44px rgba(88,101,242,.9),0 0 0 6px rgba(88,101,242,.18)}}
 .has3d .comm-sec>.wrap{border-color:rgba(120,131,255,.6);background:radial-gradient(800px 360px at 50% 0,rgba(88,101,242,.34),transparent 70%),rgba(13,8,34,.86);text-align:center;padding:64px 28px}
@@ -233,10 +238,12 @@ h1{animation:flick 7s infinite}
 .comm-sec .btn.discord{font-size:clamp(18px,3vw,26px);padding:24px 48px;border-radius:14px;animation:glowD 2.4s ease-in-out infinite}
 .comm-perks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;padding:0;margin:30px 0 0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
 .comm-perks li{padding:8px 14px;border:1px solid rgba(120,131,255,.4);border-radius:99px;background:rgba(88,101,242,.12)}
-.fab{position:fixed;left:18px;bottom:18px;z-index:45;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:99px;background:#5865f2;color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 30px rgba(88,101,242,.6);transition:transform .15s,opacity .3s;opacity:0;pointer-events:none}
-.fab.on{opacity:1;pointer-events:auto}
+.fabs{position:fixed;left:18px;bottom:18px;z-index:45;display:flex;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s}
+.fabs.on{opacity:1;pointer-events:auto}
+.fab.xfab{background:#000;border:1px solid #444;box-shadow:0 8px 30px rgba(0,0,0,.6);padding:12px 14px}
+.fab{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:99px;background:#5865f2;color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 30px rgba(88,101,242,.6);transition:transform .15s}
 .fab:hover{text-decoration:none;transform:translateY(-2px)}
-@media(max-width:700px){.fab{left:12px;bottom:12px;padding:11px 15px}.rail{display:none!important}}
+@media(max-width:700px){.fabs{left:12px;bottom:12px}.fab{padding:11px 15px}.rail{display:none!important}}
 
 /* hall of fumblers */
 .has3d .fum-sec>.wrap{border-color:rgba(255,42,42,.45);background:radial-gradient(700px 320px at 15% 0,rgba(255,42,42,.2),transparent 70%),rgba(16,6,22,.86)}
@@ -301,6 +308,7 @@ h1{animation:flick 7s infinite}
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a class="btn discord sm" data-href="discord" target="_blank" rel="noopener">Discord</a>
+    <a class="btn xbtn sm" data-href="xprofile" target="_blank" rel="noopener" aria-label="Vice City on X"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
     <a class="btn primary sm" data-href="pump" target="_blank" rel="noopener">Buy</a>
   </div>
   <div class="ticker" aria-hidden="true"><div class="ticker-in" id="ticker"></div></div>
@@ -327,7 +335,7 @@ h1{animation:flick 7s infinite}
     <p class="pre"><b>WASTED</b> IN</p>
     <h1>Vice City</h1>
     <p class="tag">The Solana meme coin that doesn't trade against SOL. It trades against <strong>$WASTED</strong>. Every ticket into the city goes through the parent coin.</p>
-    <div class="discord-hero"><a class="btn discord" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Join the Discord</a></div>
+    <div class="discord-hero"><a class="btn discord" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Join the Discord</a> <a class="btn xbtn" data-href="xprofile" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Follow on X</a></div>
     <div class="cta">
       <a class="btn primary" data-href="pump" target="_blank" rel="noopener">Buy $VICECITY</a>
       <button class="btn" data-copy>Copy contract</button>
@@ -504,8 +512,9 @@ h1{animation:flick 7s infinite}
   <div class="wrap reveal">
     <div class="eyebrow" style="color:#8b95ff">The crew</div>
     <h2>Join the <em>community</em></h2>
-    <p class="lede">The Discord is where the Vice City crew hangs out. Come say hi, talk to us directly, and get updates first.</p>
-    <a class="btn discord" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Join the Discord</a>
+    <p class="lede">The Discord is where the Vice City crew hangs out. Come say hi, talk to us directly, and get updates first. Follow us on X for raids and memes.</p>
+    <div class="comm-btns"><a class="btn discord" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Join the Discord</a>
+      <a class="btn xbtn" data-href="xprofile" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Follow @wastedvicecity</a></div>
     <ul class="comm-perks">
       <li>Talk to the team</li>
       <li>Announcements first</li>
@@ -539,7 +548,7 @@ h1{animation:flick 7s infinite}
   </div>
 </footer>
 
-<a class="fab" id="fab" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Discord</a>
+<div class="fabs" id="fab"><a class="fab" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Discord</a><a class="fab xfab" data-href="xprofile" target="_blank" rel="noopener" aria-label="Vice City on X"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></div>
 <div class="toast" id="toast" role="status">Contract copied</div>
 
 <script>
@@ -549,8 +558,10 @@ const W_POOL = "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN";
 const LAUNCH = new Date("2026-11-19T00:00:00-05:00");
 
 const DISCORD = "https://discord.gg/JUt7TAndZu"; // swap this one line if the invite changes
+const XPROFILE = "https://x.com/wastedvicecity";
 const HREF = {
   discord: DISCORD,
+  xprofile: XPROFILE,
   pump: "https://pump.fun/coin/" + CA,
   dex: "https://dexscreener.com/solana/" + POOL.toLowerCase(),
   gecko: "https://www.geckoterminal.com/solana/pools/" + POOL,
