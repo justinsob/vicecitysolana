@@ -10,14 +10,27 @@
   // location captions by progress through the whole walk
   const ZONES = [[0.05, ''], [0.34, 'Sunset Beach'], [0.67, 'The Strip'], [2, 'Downtown']];
 
+  // Phones only decode a video after it has been played once, and iOS only allows that
+  // from a muted inline video or a tap. So: try to start it right away, and again on the first touch.
+  const touch = matchMedia('(pointer: coarse)').matches;
+  function prime(v) {
+    if (v._primed) return;
+    const p = v.play();
+    if (p) p.then(() => { v.pause(); v._primed = true; }).catch(() => {});
+  }
   vids.forEach(v => {
-    v.muted = true; v.playsInline = true; v.preload = 'auto';
-    // load the whole clip into memory so every frame can be seeked instantly, on any host
+    v.muted = true; v.defaultMuted = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
     const src = (innerWidth < 768 && v.dataset.srcMobile) || v.dataset.src;
-    fetch(src).then(r => r.blob()).then(b => { v.src = URL.createObjectURL(b); }).catch(() => { v.src = src; });
-    // prime the decoder so seeking works on phones
-    v.addEventListener('loadeddata', () => { const p = v.play(); if (p) p.then(() => v.pause()).catch(() => {}); }, { once: true });
+    const use = url => { v.src = url; v.load(); prime(v); };
+    // desktop: load the whole clip into memory so every frame seeks instantly on any host.
+    // phones: stream the file directly, which mobile browsers handle more reliably than in-memory video.
+    if (touch) use(src);
+    else fetch(src).then(r => r.blob()).then(b => use(URL.createObjectURL(b))).catch(() => use(src));
+    v.addEventListener('loadedmetadata', () => prime(v));
   });
+  const kick = () => vids.forEach(prime);
+  ['touchstart', 'touchend', 'click'].forEach(ev => addEventListener(ev, kick, { passive: true }));
 
   let bounds = [], max = 1;
   function measure() {
@@ -60,9 +73,11 @@
       // opacity: scene i fades in across its start cut; the first scene is the base layer
       const op = i === 0 ? 1 : Math.min(1, Math.max(0, (cur - (a - fade / 2)) / fade));
       v.style.opacity = op;
-      if (op > 0 && v.readyState >= 2 && v.duration) {
+      if (op > 0 && v.readyState >= 1 && v.duration) {
         const t = local * (v.duration - 0.08);
-        if (!v.seeking && Math.abs(v.currentTime - t) > 0.02) v.currentTime = t;
+        // don't wait forever on a seek that a phone never reports as finished
+        const busy = v.seeking && now - (v._seekAt || 0) < 400;
+        if (!busy && Math.abs(v.currentTime - t) > 0.03) { v._seekAt = now; v.currentTime = t; }
       }
       const s = 1.08 + local * 0.06;
       v.style.transform = `translate3d(${-mouse.x * 28}px, ${-mouse.y * 18}px, 0) scale(${s})`;

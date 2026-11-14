@@ -676,7 +676,7 @@ setInterval(refresh, 20000); setInterval(trades, 30000); setInterval(tick, 1000)
 (function () {
   var d = document.documentElement; if (!d.classList.contains("has3d")) return;
   var s = document.createElement("script");
-  if (d.classList.contains("reel")) s.src = "reel.js"; else { s.type = "module"; s.src = "city.js"; }
+  if (d.classList.contains("reel")) s.src = "reel.js?v=3"; else { s.type = "module"; s.src = "city.js"; }
   document.body.append(s);
 })();
 </script>
