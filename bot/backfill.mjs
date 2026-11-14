@@ -7,7 +7,7 @@ const CA = '2afcRhtGYgp1e3xPBMu2UbnELL8AUMZzguLQsPo8pump';
 const WASTED = 'GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump';
 const POOL = '7xLmwsPbCSMVvfFQ9JuhMwfbkehJA3mswshVBBWcJ1j2';
 const WASTED_POOL = 'TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN';
-const RPCS = ['https://api.mainnet-beta.solana.com', 'https://solana-rpc.publicnode.com'];
+const RPCS = ['https://solana-rpc.publicnode.com']; // the other free endpoint throttles bulk reads
 const MIN_USD = 100, OUT = process.argv[2] || 'backfill.json';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -21,7 +21,7 @@ async function rpc(method, params) {
       const j = await r.json();
       if (j.error) throw new Error(j.error.message);
       return j.result;
-    } catch { await sleep(600 * (i + 1)); }
+    } catch { await sleep(400 * (i + 1)); }
   }
   throw new Error('rpc gave up: ' + method);
 }
@@ -67,10 +67,10 @@ async function worker() {
       }
     } catch { failed++; }
     if (++done % 500 === 0) { console.log(`read ${done}, ${sells.length} sells kept, ${failed} failed`); await writeFile(OUT, JSON.stringify(sells)); }
-    await sleep(120);
+    await sleep(40);
   }
 }
-await Promise.all(Array.from({ length: 4 }, worker));
+await Promise.all(Array.from({ length: 6 }, worker));
 sells.sort((a, b) => a.ts < b.ts ? -1 : 1);
 await writeFile(OUT, JSON.stringify(sells));
 console.log(`finished: ${sells.length} sells of $${MIN_USD}+ kept, ${failed} transactions could not be read`);

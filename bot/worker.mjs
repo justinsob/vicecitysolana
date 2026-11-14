@@ -10,7 +10,7 @@
 const CA = '2afcRhtGYgp1e3xPBMu2UbnELL8AUMZzguLQsPo8pump';
 const WASTED = 'GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump';
 const POOL = '7xLmwsPbCSMVvfFQ9JuhMwfbkehJA3mswshVBBWcJ1j2';
-const RPCS = ['https://api.mainnet-beta.solana.com', 'https://solana-rpc.publicnode.com'];
+const RPCS = ['https://solana-rpc.publicnode.com', 'https://api.mainnet-beta.solana.com'];
 const SITE = 'https://vicecitysolana.cc';
 const MAX_TX = 26; // the free plan allows 50 outgoing requests per run
 
@@ -80,7 +80,9 @@ export async function run(nowMs, env) {
   const end = Math.floor(nowMs / 60000) * 60 - 60, start = end - 60;
 
   const sigs = await rpc('getSignaturesForAddress', [POOL, { limit: 200 }]);
-  const todo = sigs.filter(s => !s.err && s.blockTime >= start && s.blockTime < end).reverse().slice(0, MAX_TX);
+  // Alerts cover one minute. The website's list also re-reads the minute before, so a run that
+  // fails doesn't leave a hole in the Hall of Fumblers (sells are de-duplicated by transaction).
+  const todo = sigs.filter(s => !s.err && s.blockTime >= start - 60 && s.blockTime < end).reverse().slice(-MAX_TX);
   const minuteOfDay = Math.floor(nowMs / 60000) % 1440, boardDue = minuteOfDay % (boardHours * 60) === 0;
   if (!todo.length && !boardDue) return { checked: 0, buys: 0, sells: 0 };
 
@@ -95,11 +97,12 @@ export async function run(nowMs, env) {
     if (!swap) continue;
     const value = swap.wasted * wastedUsd, tx = 'https://solscan.io/tx/' + s.signature;
     const who = `[${short(swap.trader)}](https://solscan.io/account/${swap.trader})`, when = new Date(s.blockTime * 1000).toISOString();
-    if (swap.buy && value >= minBuy) buys.push({
+    const fresh = s.blockTime >= start;
+    if (fresh && swap.buy && value >= minBuy) buys.push({
       title: `${usd(value)} BUY`, url: tx, color: 0x3ddc97, timestamp: when, footer: { text: 'vicecitysolana.cc' },
       description: `${'🟢'.repeat(Math.min(12, Math.max(1, Math.round(value / 100))))}\n**${num(swap.tokens)} $VICECITY** for ${num(swap.wasted)} $WASTED\nWallet ${who} · [transaction](${tx})\nMarket cap ${usd(mcap)}` });
     if (!swap.buy && value >= siteMin) records.push({ tx: s.signature, wallet: swap.trader, ts: when, tokens: swap.tokens, wasted: swap.wasted, usd: value, price: value / swap.tokens });
-    if (!swap.buy && value >= minSell) sells.push({
+    if (fresh && !swap.buy && value >= minSell) sells.push({
       title: `Paper hands: ${usd(value)} sold`, url: tx, color: 0xff3b30, timestamp: when, footer: { text: 'Trades, not people. Public on-chain data.' },
       description: `${who} sold **${num(swap.tokens)} $VICECITY** for ${usd(value)}.\nOn the watchlist now. If the price runs, that's a fumble.\n[transaction](${tx}) · [Hall of Fumblers](${SITE}/#fumblers)` });
   }
@@ -108,7 +111,8 @@ export async function run(nowMs, env) {
   let stored = null;
   if (env.FUM && !env.DRY_RUN && (records.length || boardDue)) {
     stored = await loadSells(env);
-    if (records.length) { stored = trim([...stored, ...records]); await env.FUM.put('sells', JSON.stringify(stored)); }
+    const known = new Set(stored.map(x => x.tx)), added = records.filter(x => !known.has(x.tx));
+    if (added.length) { stored = trim([...stored, ...added]); await env.FUM.put('sells', JSON.stringify(stored)); }
   }
 
   if (boardDue) {
