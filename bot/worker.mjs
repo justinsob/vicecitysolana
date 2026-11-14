@@ -12,7 +12,7 @@ const WASTED = 'GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump';
 const POOL = '7xLmwsPbCSMVvfFQ9JuhMwfbkehJA3mswshVBBWcJ1j2';
 const RPCS = ['https://api.mainnet-beta.solana.com', 'https://solana-rpc.publicnode.com'];
 const SITE = 'https://vicecitysolana.cc';
-const MAX_TX = 28; // the free plan allows 50 outgoing requests per run
+const MAX_TX = 26; // the free plan allows 50 outgoing requests per run
 
 const short = a => a.slice(0, 4) + '…' + a.slice(-4);
 const num = n => n >= 1e9 ? (n / 1e9).toFixed(2) + 'B' : n >= 1e6 ? (n / 1e6).toFixed(2) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K' : Math.round(n).toString();
@@ -64,8 +64,18 @@ async function send(webhook, username, embeds, env) {
   }
 }
 
+// The site's Hall of Fumblers list lives in KV under one key. Keep the biggest bags sold plus the most recent sells.
+async function loadSells(env) { try { return JSON.parse((await env.FUM.get('sells')) || '[]'); } catch { return []; } }
+function trim(list) {
+  const byTx = new Map(list.map(x => [x.tx, x]));
+  const all = [...byTx.values()];
+  const big = [...all].sort((a, b) => b.tokens - a.tokens).slice(0, 320);
+  const recent = [...all].sort((a, b) => (a.ts < b.ts ? 1 : -1)).slice(0, 180);
+  return [...new Map([...big, ...recent].map(x => [x.tx, x])).values()].sort((a, b) => (a.ts < b.ts ? -1 : 1));
+}
+
 export async function run(nowMs, env) {
-  const minBuy = +(env.MIN_BUY_USD || 100), minSell = +(env.MIN_SELL_USD || 200), boardHours = +(env.LEADERBOARD_HOURS || 6);
+  const minBuy = +(env.MIN_BUY_USD || 100), minSell = +(env.MIN_SELL_USD || 200), boardHours = +(env.LEADERBOARD_HOURS || 6), siteMin = +(env.SITE_MIN_SELL_USD || 100);
   // the minute that finished one minute ago, so every trade in it is final
   const end = Math.floor(nowMs / 60000) * 60 - 60, start = end - 60;
 
@@ -77,7 +87,7 @@ export async function run(nowMs, env) {
   const pair = (await (await fetch('https://api.dexscreener.com/latest/dex/pairs/solana/' + POOL)).json()).pair;
   const viceUsd = +pair.priceUsd, wastedUsd = viceUsd / +pair.priceNative, mcap = pair.marketCap ?? pair.fdv;
 
-  const buys = [], sells = [];
+  const buys = [], sells = [], records = [];
   for (const s of todo) {
     let swap = null;
     try { swap = parseSwap(await rpc('getTransaction', [s.signature, { encoding: 'jsonParsed', maxSupportedTransactionVersion: 1 }])); }
@@ -88,14 +98,22 @@ export async function run(nowMs, env) {
     if (swap.buy && value >= minBuy) buys.push({
       title: `${usd(value)} BUY`, url: tx, color: 0x3ddc97, timestamp: when, footer: { text: 'vicecitysolana.cc' },
       description: `${'🟢'.repeat(Math.min(12, Math.max(1, Math.round(value / 100))))}\n**${num(swap.tokens)} $VICECITY** for ${num(swap.wasted)} $WASTED\nWallet ${who} · [transaction](${tx})\nMarket cap ${usd(mcap)}` });
+    if (!swap.buy && value >= siteMin) records.push({ tx: s.signature, wallet: swap.trader, ts: when, tokens: swap.tokens, wasted: swap.wasted, usd: value, price: value / swap.tokens });
     if (!swap.buy && value >= minSell) sells.push({
       title: `Paper hands: ${usd(value)} sold`, url: tx, color: 0xff3b30, timestamp: when, footer: { text: 'Trades, not people. Public on-chain data.' },
       description: `${who} sold **${num(swap.tokens)} $VICECITY** for ${usd(value)}.\nOn the watchlist now. If the price runs, that's a fumble.\n[transaction](${tx}) · [Hall of Fumblers](${SITE}/#fumblers)` });
   }
 
+  // add this minute's sells to the list the website reads
+  let stored = null;
+  if (env.FUM && !env.DRY_RUN && (records.length || boardDue)) {
+    stored = await loadSells(env);
+    if (records.length) { stored = trim([...stored, ...records]); await env.FUM.put('sells', JSON.stringify(stored)); }
+  }
+
   if (boardDue) {
     try {
-      const listed = (await (await fetch(SITE + '/fumblers.json')).json()).sells.map(x => ({ ...x, fum: x.tokens * viceUsd - x.usd }));
+      const listed = (stored && stored.length ? stored : (await (await fetch(SITE + '/fumblers.json')).json()).sells).map(x => ({ ...x, fum: x.tokens * viceUsd - x.usd }));
       const top = listed.filter(x => x.fum > 0).sort((a, b) => b.fum - a.fum).slice(0, 5);
       if (top.length) sells.push({
         title: `Top fumbles right now · ${usd(listed.reduce((t, x) => t + Math.max(0, x.fum), 0))} left on the table`, url: SITE + '/#fumblers', color: 0xff3b30,
@@ -113,8 +131,14 @@ export async function run(nowMs, env) {
 export default {
   async scheduled(event, env, ctx) { ctx.waitUntil(run(event.scheduledTime, env)); },
   // /check does a no-posting run for a recent minute, to confirm the Worker can read trades
-  async fetch(req) {
+  async fetch(req, env) {
     const url = new URL(req.url);
+    if (url.pathname === '/fumblers.json') {
+      // the website reads this; it is the live list of checked sells
+      const sells = await loadSells(env), ts = sells.map(x => x.ts).sort();
+      return new Response(JSON.stringify({ generated: new Date().toISOString(), live: true, from: ts[0] || null, to: ts.at(-1) || null, sells }), {
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=30' } });
+    }
     if (url.pathname !== '/check') return new Response('Vice City alerts. Runs on a schedule; nothing to see here.');
     const back = Math.min(30, Math.max(0, +(url.searchParams.get('back') || 0)));
     try { return Response.json({ ok: true, ...(await run(Date.now() - back * 60000, { DRY_RUN: '1', MIN_BUY_USD: '50', MIN_SELL_USD: '50', LEADERBOARD_HOURS: '100000' })) }); }

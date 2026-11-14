@@ -435,7 +435,7 @@ h1{animation:flick 7s infinite}
       <tbody id="fumRows"></tbody>
     </table></div>
     <p class="src" id="fumCover"></p>
-    <p class="src"><b>How this works:</b> sells come from GeckoTerminal's public trade feed and each one is checked on Solana mainnet (finalized, no error, the wallet's $VICECITY balance went down). "Fumbled" is tokens sold × the live price, minus the USD value at the sale. If the price is lower now, it shows as a lucky exit. It's the value of the sold tokens only, not anyone's profit or loss, and not a prediction. Wallets are shortened. It's about trades, not people, so don't go hunting for wallet owners.</p>
+    <p class="src"><b>How this works:</b> sells of $100 or more are read straight from Solana for the $VICECITY pool (finalized, no error, the wallet's $VICECITY balance went down). The list keeps the biggest bags sold and the most recent sells. "Fumbled" is tokens sold × the live price, minus the USD value at the sale. If the price is lower now, it shows as a lucky exit. It's the value of the sold tokens only, not anyone's profit or loss, and not a prediction. Wallets are shortened. It's about trades, not people, so don't go hunting for wallet owners.</p>
   </div>
 </section>
 
@@ -697,10 +697,23 @@ function renderFum() {
     tb.append(tr);
   });
   $("fumTableBox").style.display = top.length > 3 ? "block" : "none";
-  $("fumCover").textContent = `${rows.length} checked sells from ${when(FUM.from)} to ${when(FUM.to)} (your local time). Data as of ${when(FUM.generated)}. Live price ${px(vicePrice)} from DexScreener.`;
+  $("fumCover").textContent = `${rows.length} checked sells from ${when(FUM.from)} to ${when(FUM.to)} (your local time). ${FUM.live ? "List updates live, about a minute after each big sell." : "Snapshot as of " + when(FUM.generated) + "."} Live price ${px(vicePrice)} from DexScreener.`;
 }
-fetch("fumblers.json").then(r => r.ok ? r.json() : Promise.reject()).then(j => { FUM = j; renderFum(); })
-  .catch(() => { $("fumSub").textContent = "No checked sells yet. Run tools/fumblers.py to build the list."; });
+// Live list from the alerts Worker (updated within a minute or two of each big sell);
+// falls back to the snapshot file if the Worker can't be reached.
+const FUM_LIVE = "https://vicecity-alerts.justin-35e.workers.dev/fumblers.json";
+async function loadFum() {
+  for (const url of [FUM_LIVE, "fumblers.json"]) {
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (j && j.sells && j.sells.length) { FUM = j; renderFum(); return; }
+    } catch {}
+  }
+  if (!FUM) $("fumSub").textContent = "The list of checked sells couldn't be loaded. Try refreshing.";
+}
+loadFum(); setInterval(loadFum, 60000);
 const stamp = $("stamp");
 new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { stamp.classList.remove("go"); void stamp.offsetWidth; stamp.classList.add("go"); } }), { threshold: .2 }).observe($("fumblers"));
 

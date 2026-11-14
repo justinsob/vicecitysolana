@@ -10,6 +10,11 @@ crons = ["* * * * *"]
 MIN_BUY_USD = "100"
 MIN_SELL_USD = "200"
 LEADERBOARD_HOURS = "6"
+SITE_MIN_SELL_USD = "100"
 
 [observability]
 enabled = true
+
+[[kv_namespaces]]
+binding = "FUM"
+id = "5e946d8485624fefae8cd6656cd7c76a"
