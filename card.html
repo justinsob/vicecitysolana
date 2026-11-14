@@ -122,8 +122,10 @@ function draw() {
   ctx.textAlign = "center";
   const word = fumbled ? "FUMBLED" : "PAPER HANDS";
   const ws = fit(ctx, word, W - 160, 210, s => `${s}px Anton`);
-  ctx.lineJoin = "round"; ctx.lineWidth = 14; ctx.strokeStyle = "#0b0b0c"; ctx.strokeText(word, W / 2, 265 + ws * 0.37);
-  ctx.fillStyle = "#ff2a22"; ctx.shadowColor = "rgba(255,42,34,.55)"; ctx.shadowBlur = 30; ctx.fillText(word, W / 2, 265 + ws * 0.37); ctx.shadowBlur = 0;
+  ctx.lineJoin = "round"; ctx.lineWidth = 14; ctx.strokeStyle = "#0b0b0c"; 
+  const wm = ctx.measureText(word), wy = 265 + (wm.actualBoundingBoxAscent - wm.actualBoundingBoxDescent) / 2; // exact vertical centre of the band
+  ctx.strokeText(word, W / 2, wy);
+  ctx.fillStyle = "#ff2a22"; ctx.shadowColor = "rgba(255,42,34,.55)"; ctx.shadowBlur = 30; ctx.fillText(word, W / 2, wy); ctx.shadowBlur = 0;
 
   // who and what
   const line = `${who} sold ${num(sell.tokens)} $VICECITY for ${money(sell.usd)}`;
