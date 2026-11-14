@@ -26,7 +26,7 @@ input{flex:1;min-width:180px;padding:12px 14px;border-radius:8px;border:1px soli
 body.bare{background:#000}
 body.bare main{max-width:none;padding:0;margin:0}
 body.bare .ui{display:none}
-body.bare canvas{width:1200px;height:675px;border:0;border-radius:0}
+body.bare canvas{width:1200px;height:auto;max-width:none!important;border:0;border-radius:0}
 </style>
 </head>
 <body>
@@ -41,6 +41,7 @@ body.bare canvas{width:1200px;height:675px;border:0;border-radius:0}
     <button class="btn" id="cp">Copy image</button>
     <a class="btn" id="tw" target="_blank" rel="noopener">Post on X</a>
     <button class="btn" id="joke">New joke</button>
+    <button class="btn" id="shape">Make it square</button>
   </div>
   <div class="row ui">
     <input id="name" maxlength="24" placeholder="Name on the card (optional, replaces the wallet)">
@@ -79,6 +80,7 @@ const WATCH = [
   "Cashed out. We'll check back at the next pump."
 ];
 
+let square = q.get("size") === "square";
 let sell = null, price = 0, jokeN = 0, bg = null;
 const hash = s => { let h = 0; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
 
@@ -88,7 +90,12 @@ function fit(ctx, text, maxW, size, font) { // shrink the type until the line fi
 }
 
 function draw() {
-  const c = $("c"), ctx = c.getContext("2d"), W = 1200, H = 675;
+  const c = $("c"), W = 1200, H = square ? 1200 : 675;
+  if (c.height !== H) c.height = H;
+  const ctx = c.getContext("2d");
+  // layout: B is the top of the band, bh its height, k scales the type under it
+  const B = square ? 345 : 150, bh = square ? 270 : 230, mid = B + bh / 2, k = square ? 1.18 : 1;
+  const y1 = square ? B + bh + 92 : 440, y2 = square ? y1 + 108 : 526, y3 = square ? y2 + 48 : 562, y4 = square ? y3 + 70 : 610;
   ctx.clearRect(0, 0, W, H);
   // street photo, drained of colour like the end of a bad mission
   if (bg) {
@@ -98,7 +105,7 @@ function draw() {
     ctx.globalCompositeOperation = "source-over";
   } else { ctx.fillStyle = "#1a1a1e"; ctx.fillRect(0, 0, W, H); }
   ctx.fillStyle = "rgba(8,6,12,.5)"; ctx.fillRect(0, 0, W, H);
-  const v = ctx.createRadialGradient(W / 2, H / 2, 200, W / 2, H / 2, 760);
+  const v = ctx.createRadialGradient(W / 2, H / 2, 200, W / 2, H / 2, square ? 980 : 760);
   v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,.8)");
   ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
   if (!sell) return;
@@ -117,31 +124,31 @@ function draw() {
   ctx.fillText(new Date(sell.ts).toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }), W - 48, 88);
 
   // the band
-  ctx.fillStyle = "rgba(0,0,0,.72)"; ctx.fillRect(0, 150, W, 230);
-  ctx.fillStyle = "#ff2a22"; ctx.fillRect(0, 150, W, 4); ctx.fillRect(0, 376, W, 4);
+  ctx.fillStyle = "rgba(0,0,0,.72)"; ctx.fillRect(0, B, W, bh);
+  ctx.fillStyle = "#ff2a22"; ctx.fillRect(0, B, W, 4); ctx.fillRect(0, B + bh - 4, W, 4);
   ctx.textAlign = "center";
   const word = fumbled ? "FUMBLED" : "PAPER HANDS";
-  const ws = fit(ctx, word, W - 160, 210, s => `${s}px Anton`);
+  const ws = fit(ctx, word, W - 160, square ? 250 : 210, s => `${s}px Anton`);
   ctx.lineJoin = "round"; ctx.lineWidth = 14; ctx.strokeStyle = "#0b0b0c"; 
-  const wm = ctx.measureText(word), wy = 265 + (wm.actualBoundingBoxAscent - wm.actualBoundingBoxDescent) / 2; // exact vertical centre of the band
+  const wm = ctx.measureText(word), wy = mid + (wm.actualBoundingBoxAscent - wm.actualBoundingBoxDescent) / 2; // exact vertical centre of the band
   ctx.strokeText(word, W / 2, wy);
   ctx.fillStyle = "#ff2a22"; ctx.shadowColor = "rgba(255,42,34,.55)"; ctx.shadowBlur = 30; ctx.fillText(word, W / 2, wy); ctx.shadowBlur = 0;
 
   // who and what
   const line = `${who} sold ${num(sell.tokens)} $VICECITY for ${money(sell.usd)}`;
-  fit(ctx, line, W - 120, 36, s => `700 ${s}px "JetBrains Mono"`);
-  ctx.fillStyle = "#fff"; ctx.fillText(line, W / 2, 440);
+  fit(ctx, line, W - 120, 36 * k, s => `700 ${s}px "JetBrains Mono"`);
+  ctx.fillStyle = "#fff"; ctx.fillText(line, W / 2, y1);
 
   const bigLine = fumbled ? `+${money(fum)} LEFT ON THE TABLE` : `THAT BAG IS ${money(now)} NOW`;
-  fit(ctx, bigLine, W - 120, 78, s => `${s}px Anton`);
-  ctx.fillStyle = "#ffd166"; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 12; ctx.fillText(bigLine, W / 2, 526); ctx.shadowBlur = 0;
+  fit(ctx, bigLine, W - 120, 78 * k, s => `${s}px Anton`);
+  ctx.fillStyle = "#ffd166"; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 12; ctx.fillText(bigLine, W / 2, y2); ctx.shadowBlur = 0;
 
   const sub = fumbled ? `That bag is worth ${money(now)} today${mult >= 2 ? ` · ${mult >= 10 ? mult.toFixed(0) : mult.toFixed(1)}x what they took` : ""}` : "Not a fumble yet. The chart decides.";
-  ctx.font = '500 20px "JetBrains Mono"'; ctx.fillStyle = "rgba(255,255,255,.75)"; ctx.fillText(sub, W / 2, 562);
+  ctx.font = `500 ${Math.round(20 * k)}px "JetBrains Mono"`; ctx.fillStyle = "rgba(255,255,255,.75)"; ctx.fillText(sub, W / 2, y3);
 
   const list = fumbled ? JOKES : WATCH, joke = list[(hash(sell.tx) + jokeN) % list.length];
-  fit(ctx, "“" + joke + "”", W - 160, 28, s => `italic 600 ${s}px Inter`);
-  ctx.fillStyle = "#ff8ac6"; ctx.fillText("“" + joke + "”", W / 2, 610);
+  fit(ctx, "“" + joke + "”", W - 160, 28 * k, s => `italic 600 ${s}px Inter`);
+  ctx.fillStyle = "#ff8ac6"; ctx.fillText("“" + joke + "”", W / 2, y4);
 
   // footer
   ctx.font = '700 18px "JetBrains Mono"'; ctx.textAlign = "left"; ctx.fillStyle = "#2ee6e6"; ctx.fillText("vicecitysolana.cc", 48, H - 26);
@@ -179,8 +186,11 @@ async function getList() {
 })();
 
 $("name").addEventListener("input", draw);
+const shapeLabel = () => { $("shape").textContent = square ? "Make it wide" : "Make it square"; $("c").style.maxWidth = square ? "640px" : ""; };
+$("shape").onclick = () => { square = !square; shapeLabel(); draw(); };
+shapeLabel();
 $("joke").onclick = () => { jokeN++; draw(); };
-$("dl").onclick = () => $("c").toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "fumbled-" + (sell ? sell.wallet.slice(0, 6) : "card") + ".png"; a.click(); });
+$("dl").onclick = () => $("c").toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "fumbled-" + (sell ? sell.wallet.slice(0, 6) : "card") + (square ? "-square" : "") + ".png"; a.click(); });
 $("cp").onclick = async () => {
   try { await navigator.clipboard.write([new ClipboardItem({ "image/png": new Promise(r => $("c").toBlob(r)) })]); $("cp").textContent = "Copied"; }
   catch { $("cp").textContent = "Use Download"; }
