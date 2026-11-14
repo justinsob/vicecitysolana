@@ -104,7 +104,7 @@ export async function run(nowMs, env) {
     if (!swap.buy && value >= siteMin) records.push({ tx: s.signature, wallet: swap.trader, ts: when, tokens: swap.tokens, wasted: swap.wasted, usd: value, price: value / swap.tokens });
     if (fresh && !swap.buy && value >= minSell) sells.push({
       title: `Paper hands: ${usd(value)} sold`, url: tx, color: 0xff3b30, timestamp: when, footer: { text: 'Trades, not people. Public on-chain data.' },
-      description: `${who} sold **${num(swap.tokens)} $VICECITY** for ${usd(value)}.\nOn the watchlist now. If the price runs, that's a fumble.\n[transaction](${tx}) · [Hall of Fumblers](${SITE}/#fumblers)` });
+      description: `${who} sold **${num(swap.tokens)} $VICECITY** for ${usd(value)}.\nOn the watchlist now. If the price runs, that's a fumble.\n[transaction](${tx}) · [meme card](${SITE}/card.html?tx=${s.signature}) · [Hall of Fumblers](${SITE}/#fumblers)` });
   }
 
   // add this minute's sells to the list the website reads

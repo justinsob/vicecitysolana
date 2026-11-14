@@ -684,7 +684,8 @@ function renderFum() {
     c.append(el("div", "big" + (r.fum < 0 ? " dodge" : ""), (r.fum >= 0 ? "+" : "") + money(r.fum)));
     c.append(el("p", null, `Sold ${num(r.tokens)} $VICECITY for ${money(r.usd)} (${num(r.wasted)} WASTED). That bag is ${money(r.now)} now.`));
     const w = el("div", "w"); w.append(el("span", null, short(r.wallet) + " · " + when(r.ts)), el("span", "tier " + t[2], t[1])); c.append(w);
-    const a = el("a", null, "View transaction ↗"); a.href = "https://solscan.io/tx/" + r.tx; a.target = "_blank"; a.rel = "noopener"; a.style.fontSize = "12px"; c.append(a);
+    const a = el("a", null, "View transaction ↗"); a.href = "https://solscan.io/tx/" + r.tx; a.target = "_blank"; a.rel = "noopener"; a.style.fontSize = "12px";
+    const k = el("a", null, "Make the meme card →"); k.href = "card.html?tx=" + r.tx; k.style.cssText = "font-size:12px;font-weight:700;color:var(--pink);margin-right:14px"; c.append(k, a);
     pod.append(c);
   });
   const tb = $("fumRows"); tb.textContent = "";
@@ -693,7 +694,7 @@ function renderFum() {
     [i + 4, num(r.tokens), money(r.usd), money(r.now)].forEach(v => tr.append(el("td", null, v)));
     tr.append(el("td", r.fum >= 0 ? "neg" : "pos", (r.fum >= 0 ? "+" : "") + money(r.fum) + " (" + (r.pct >= 0 ? "+" : "") + (r.pct * 100).toFixed(0) + "%)"));
     tr.append(el("td", null, short(r.wallet)), el("td", null, when(r.ts)));
-    const td = el("td"), a = el("a", null, "↗"); a.href = "https://solscan.io/tx/" + r.tx; a.target = "_blank"; a.rel = "noopener"; td.append(a); tr.append(td);
+    const td = el("td"), a = el("a", null, "↗"); a.href = "https://solscan.io/tx/" + r.tx; a.target = "_blank"; a.rel = "noopener"; const k = el("a", null, "card"); k.href = "card.html?tx=" + r.tx; k.title = "Make the meme card"; k.style.cssText = "color:var(--pink);margin-right:8px"; td.append(k, a); tr.append(td);
     tb.append(tr);
   });
   $("fumTableBox").style.display = top.length > 3 ? "block" : "none";
