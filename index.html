@@ -45,7 +45,7 @@ nav .wrap{display:flex;align-items:center;gap:20px;height:58px}
 .brand:hover{text-decoration:none}
 nav ul{display:flex;gap:18px;list-style:none;margin:0 0 0 auto;padding:0;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 nav ul a{color:var(--mute)}nav ul a:hover{color:var(--text);text-decoration:none}
-@media(max-width:760px){nav ul{display:none}nav .btn{margin-left:auto}}
+@media(max-width:760px){nav ul{display:none}nav .btn.discord{margin-left:auto}}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--r);border:1px solid var(--line);background:#150b2b;color:var(--text);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:transform .12s,box-shadow .12s}
@@ -220,6 +220,24 @@ h1{animation:flick 7s infinite}
 @keyframes stampBg{0%{opacity:0}12%,60%{opacity:1}100%{opacity:0}}
 @keyframes stampTx{0%{transform:scale(2.2);opacity:0}18%{transform:scale(1);opacity:1}70%{transform:scale(1.04);opacity:1}100%{transform:scale(1.1);opacity:0}}
 
+/* discord */
+.btn.discord{background:linear-gradient(180deg,#6d79ff,#4a55e8);border-color:#9aa3ff;color:#fff;box-shadow:0 6px 26px rgba(88,101,242,.5)}
+.discord-hero{display:flex;justify-content:center;margin:0 0 14px}
+.discord-hero .btn{font-size:clamp(15px,2.2vw,19px);padding:18px 34px;border-radius:10px;animation:glowD 2.4s ease-in-out infinite}
+@keyframes glowD{50%{box-shadow:0 8px 44px rgba(88,101,242,.9),0 0 0 6px rgba(88,101,242,.18)}}
+.has3d .comm-sec>.wrap{border-color:rgba(120,131,255,.6);background:radial-gradient(800px 360px at 50% 0,rgba(88,101,242,.34),transparent 70%),rgba(13,8,34,.86);text-align:center;padding:64px 28px}
+.comm-sec{text-align:center}
+.comm-sec h2{font-size:clamp(44px,8vw,84px)}
+.comm-sec h2 em{color:#8b95ff}
+.comm-sec .lede{margin:0 auto 28px;max-width:560px;font-size:18px;color:var(--text)}
+.comm-sec .btn.discord{font-size:clamp(18px,3vw,26px);padding:24px 48px;border-radius:14px;animation:glowD 2.4s ease-in-out infinite}
+.comm-perks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;padding:0;margin:30px 0 0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.comm-perks li{padding:8px 14px;border:1px solid rgba(120,131,255,.4);border-radius:99px;background:rgba(88,101,242,.12)}
+.fab{position:fixed;left:18px;bottom:18px;z-index:45;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:99px;background:#5865f2;color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 30px rgba(88,101,242,.6);transition:transform .15s,opacity .3s;opacity:0;pointer-events:none}
+.fab.on{opacity:1;pointer-events:auto}
+.fab:hover{text-decoration:none;transform:translateY(-2px)}
+@media(max-width:700px){.fab{left:12px;bottom:12px;padding:11px 15px}.rail{display:none!important}}
+
 /* hall of fumblers */
 .has3d .fum-sec>.wrap{border-color:rgba(255,42,42,.45);background:radial-gradient(700px 320px at 15% 0,rgba(255,42,42,.2),transparent 70%),rgba(16,6,22,.86)}
 .fum-sec h2 em{color:#ff3b30}
@@ -279,8 +297,10 @@ h1{animation:flick 7s infinite}
       <li><a href="#fumblers">Fumblers</a></li>
       <li><a href="#stats">Stats</a></li>
       <li><a href="#buy">How to buy</a></li>
+      <li><a href="#community">Community</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
+    <a class="btn discord sm" data-href="discord" target="_blank" rel="noopener">Discord</a>
     <a class="btn primary sm" data-href="pump" target="_blank" rel="noopener">Buy</a>
   </div>
   <div class="ticker" aria-hidden="true"><div class="ticker-in" id="ticker"></div></div>
@@ -307,6 +327,7 @@ h1{animation:flick 7s infinite}
     <p class="pre"><b>WASTED</b> IN</p>
     <h1>Vice City</h1>
     <p class="tag">The Solana meme coin that doesn't trade against SOL. It trades against <strong>$WASTED</strong>. Every ticket into the city goes through the parent coin.</p>
+    <div class="discord-hero"><a class="btn discord" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Join the Discord</a></div>
     <div class="cta">
       <a class="btn primary" data-href="pump" target="_blank" rel="noopener">Buy $VICECITY</a>
       <button class="btn" data-copy>Copy contract</button>
@@ -479,6 +500,22 @@ h1{animation:flick 7s infinite}
   </div>
 </section>
 
+<section id="community" class="comm-sec">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="color:#8b95ff">The crew</div>
+    <h2>Join the <em>community</em></h2>
+    <p class="lede">The Discord is where the Vice City crew hangs out. Come say hi, talk to us directly, and get updates first.</p>
+    <a class="btn discord" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Join the Discord</a>
+    <ul class="comm-perks">
+      <li>Talk to the team</li>
+      <li>Announcements first</li>
+      <li>Memes and raids</li>
+      <li>Hall of Fumblers chat</li>
+    </ul>
+    <p class="src" style="margin-top:22px">The team will never DM you first or ask for funds or a recovery phrase.</p>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap reveal">
     <div class="eyebrow">FAQ</div>
@@ -487,6 +524,7 @@ h1{animation:flick 7s infinite}
     <details><summary>How is it connected to $WASTED?</summary><p>On-chain. The PumpSwap pool holds $VICECITY and $WASTED, so $VICECITY is priced in $WASTED and trades route through it. You can confirm the quote token on Solscan or DexScreener.</p></details>
     <details><summary>Why pair with $WASTED instead of SOL?</summary><p>It ties the two together. Liquidity for $VICECITY sits in $WASTED, so activity here shows up there.</p></details>
     <details><summary>Is the contract safe?</summary><p>It's a standard pump.fun token that graduated to PumpSwap. Mint and freeze authority are both null. Always check the CA (2afcRh…Po8pump) before buying. Nobody legit will ever ask for your recovery phrase. DYOR.</p></details>
+    <details><summary>Where can I talk to the community?</summary><p>In the Discord. Use the Join the Discord button on this page. The team will never DM you first or ask for funds.</p></details>
     <details><summary>Is this affiliated with GTA or Rockstar?</summary><p>No. $VICECITY is an independent fan meme coin and is not affiliated with, endorsed by, or connected to Rockstar Games or Take-Two Interactive.</p></details>
   </div>
 </section>
@@ -501,6 +539,7 @@ h1{animation:flick 7s infinite}
   </div>
 </footer>
 
+<a class="fab" id="fab" data-href="discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7l-5.5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm7 0a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg> Discord</a>
 <div class="toast" id="toast" role="status">Contract copied</div>
 
 <script>
@@ -509,7 +548,9 @@ const POOL = "7xLmwsPbCSMVvfFQ9JuhMwfbkehJA3mswshVBBWcJ1j2";
 const W_POOL = "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN";
 const LAUNCH = new Date("2026-11-19T00:00:00-05:00");
 
+const DISCORD = "https://discord.gg/KEZjjZBc"; // swap this one line if the invite changes
 const HREF = {
+  discord: DISCORD,
   pump: "https://pump.fun/coin/" + CA,
   dex: "https://dexscreener.com/solana/" + POOL.toLowerCase(),
   gecko: "https://www.geckoterminal.com/solana/pools/" + POOL,
@@ -662,6 +703,9 @@ fetch("fumblers.json").then(r => r.ok ? r.json() : Promise.reject()).then(j => {
   .catch(() => { $("fumSub").textContent = "No checked sells yet. Run tools/fumblers.py to build the list."; });
 const stamp = $("stamp");
 new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { stamp.classList.remove("go"); void stamp.offsetWidth; stamp.classList.add("go"); } }), { threshold: .2 }).observe($("fumblers"));
+
+const fab = $("fab");
+addEventListener("scroll", () => fab.classList.toggle("on", scrollY > innerHeight * 0.7), { passive: true });
 
 document.documentElement.classList.add("js");
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); }), { threshold: .12 });
