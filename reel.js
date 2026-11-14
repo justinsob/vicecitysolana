@@ -79,7 +79,7 @@
         const busy = v.seeking && now - (v._seekAt || 0) < 400;
         if (!busy && Math.abs(v.currentTime - t) > 0.03) { v._seekAt = now; v.currentTime = t; }
       }
-      const s = 1.08 + local * 0.06;
+      const s = touch ? 1 + local * 0.03 : 1.05 + local * 0.04; // less zoom keeps the footage sharper
       v.style.transform = `translate3d(${-mouse.x * 28}px, ${-mouse.y * 18}px, 0) scale(${s})`;
     });
 

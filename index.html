@@ -263,7 +263,7 @@ h1{animation:flick 7s infinite}
 <a class="skip" href="#main">Skip to content</a>
 <canvas id="city" aria-hidden="true"></canvas>
 <div id="reel" aria-hidden="true">
-  <video data-src="media/walk.mp4" data-src-mobile="media/walk-mobile.mp4" poster="media/walk-poster.jpg" muted playsinline></video>
+  <video data-src="media/walk.mp4?v=2" data-src-mobile="media/walk-mobile.mp4?v=2" poster="media/walk-poster.jpg" muted playsinline></video>
 </div>
 <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
 <div class="loc" id="loc" aria-hidden="true"></div>
@@ -676,7 +676,7 @@ setInterval(refresh, 20000); setInterval(trades, 30000); setInterval(tick, 1000)
 (function () {
   var d = document.documentElement; if (!d.classList.contains("has3d")) return;
   var s = document.createElement("script");
-  if (d.classList.contains("reel")) s.src = "reel.js?v=3"; else { s.type = "module"; s.src = "city.js"; }
+  if (d.classList.contains("reel")) s.src = "reel.js?v=4"; else { s.type = "module"; s.src = "city.js"; }
   document.body.append(s);
 })();
 </script>
