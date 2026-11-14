@@ -1,0 +1,1357 @@
+{
+ "generated": "2026-11-14T17:59:37Z",
+ "from": "2026-11-14T05:17:48Z",
+ "to": "2026-11-14T07:00:28Z",
+ "sells": [
+  {
+   "tx": "56E1i2M5E8UD4Yxz7f82HWCfrd5XG7wunnzqtGD78G9WZP5sJjGQUv8MzNT3S7CW49ueMvr6RWv4nvn9GvMX5tzv",
+   "wallet": "FvLjZyAGTKi9RHw7mfjEk63S4ftJXNyZ1TwvaB7txFsd",
+   "ts": "2026-11-14T05:51:45Z",
+   "tokens": 36284256.196513,
+   "wasted": 406192.486592,
+   "usd": 1202.7907284506655,
+   "price": 3.314910803011738e-05
+  },
+  {
+   "tx": "2wiFaJahemtDhxZwKx61NJYRQgCFqCTuuKjH5kKU9XN3TaH5y9JyLjQYphdjnSCHNVKU7cygZPSi7A3LTVqNiNnh",
+   "wallet": "7WzeMPKtCMQHwR8rPQFqKpzNznKhmrpFT2t8y7VsHcu",
+   "ts": "2026-11-14T05:52:53Z",
+   "tokens": 27398016.646172,
+   "wasted": 343192.76366,
+   "usd": 1067.3617009843315,
+   "price": 3.895762655993062e-05
+  },
+  {
+   "tx": "5PC4BJkj6ebvda7nZyHV5hrRpG31TWkSigfTh8G2LHsDmmbL6aryT6Y3Kmxihf2qSpfJ2Q3DVjp9AjGwyocjCap6",
+   "wallet": "8as8mdPkfqQPBfeG2xvNzbarXuB3ssZXjX8z9uRUqHdJ",
+   "ts": "2026-11-14T05:51:36Z",
+   "tokens": 15146355.80682,
+   "wasted": 262409.971814,
+   "usd": 835.7078992710575,
+   "price": 5.517550953707033e-05
+  },
+  {
+   "tx": "3Nk6W77ha89RojHktUvUVEQEKosLRvSMY3Am1ebh4qdDfaLtvX7goH7p4F7XzbvfjMfRn6jXppFE6HyRmaRvto5a",
+   "wallet": "9NeEG8rFsceoERBV4v1vgxtCFmduTYA9VQUwWvvLwMPj",
+   "ts": "2026-11-14T05:49:31Z",
+   "tokens": 11334997.847329,
+   "wasted": 229327.076063,
+   "usd": 752.5529292173484,
+   "price": 6.639197813298935e-05
+  },
+  {
+   "tx": "FyMqGR8hiidKptz6zucUNKK8M7GdqJd8AxHQ4AjaNmH1q72746u69fNDpr5Lu5KB3DDv1dUmEywjFbrTbosbtYk",
+   "wallet": "7WzeMPKtCMQHwR8rPQFqKpzNznKhmrpFT2t8y7VsHcu",
+   "ts": "2026-11-14T05:51:40Z",
+   "tokens": 16227394.324959,
+   "wasted": 225414.245529,
+   "usd": 687.8763101429845,
+   "price": 4.2389819115012015e-05
+  },
+  {
+   "tx": "3tnELVwR5ojkV9cpmsJTRpUiz3Jmd5YD63QWGC9kwaLnqeafmisMMHws7fNchQiFs51Lnnpv3fWf3BAuTqchYe88",
+   "wallet": "2xnrdj5e8JRQSrMRpKPLrFUfgBRQdNnUQJuUAVer7sRH",
+   "ts": "2026-11-14T05:45:41Z",
+   "tokens": 7952624.8087,
+   "wasted": 145413.930149,
+   "usd": 471.6647753327095,
+   "price": 5.9309320718452403e-05
+  },
+  {
+   "tx": "5yrPMRFm51QTgXiVuBVS6JhUErbQecJbjvj2UfzXP4Tf75jps45emYqzQA7SuofJVHP3ZMgrD85Ttpm8kAQ18xPL",
+   "wallet": "3nme5no9iYW1Y6zr9RmssJasuAQpZMQRmGBrwjhQpyTu",
+   "ts": "2026-11-14T05:51:30Z",
+   "tokens": 7682046.909611,
+   "wasted": 145010.105232,
+   "usd": 465.58822281047077,
+   "price": 6.0607313166491326e-05
+  },
+  {
+   "tx": "12A2zrgjsGd5bJxRgJuKD2tkHR7BfQShmtwfSYWtrAyMcKAVrYmE7QTP17AQiQqv2Uio3uLs45rhgqGR7iU37qhC",
+   "wallet": "7WzeMPKtCMQHwR8rPQFqKpzNznKhmrpFT2t8y7VsHcu",
+   "ts": "2026-11-14T06:09:14Z",
+   "tokens": 18671505.071811,
+   "wasted": 144112.479191,
+   "usd": 420.0170195791557,
+   "price": 2.2495081031966165e-05
+  },
+  {
+   "tx": "39LwvY4nL3exm8dEo6FCitEo9wfy2Kamwygwg7NjJQtLvEmNUuj6UCzBSk6rnigfsXYkvo5wYwbUSoKC51Ps5cag",
+   "wallet": "C1XTWu4QrySoUhZ1HVELSnPnrLYN3wdPmUF19oMgUdFs",
+   "ts": "2026-11-14T05:47:08Z",
+   "tokens": 6190913.196113,
+   "wasted": 127121.108709,
+   "usd": 419.5284856659951,
+   "price": 6.776520238232357e-05
+  },
+  {
+   "tx": "4ZxGM6RcHZ5wzSPoAVAahLEa32RtTpnP56CViCtQSdVgVLQhWacjex5yxuHvDWsYLUcRg2ZeabC7CZ1ZhxxTP6UD",
+   "wallet": "GtnKRansZqZvMLQsx4hupFzkMcPgbF31oeruQkRm3fX8",
+   "ts": "2026-11-14T05:50:55Z",
+   "tokens": 6569591.294132,
+   "wasted": 124353.285152,
+   "usd": 412.4034765464495,
+   "price": 6.277460165822048e-05
+  },
+  {
+   "tx": "3T77hQs8XF5pfP3SMMefQqMyjjZVthPEoVs9SiRtunrnFxCTG9TPYCve8kZ1UHc7SzK3MXNjBPUjzFCkm7kKAo8L",
+   "wallet": "EYthE6pzYP9ZK4bVCsKu3Ujeqhew8DQ71fr8tCBcwJ5H",
+   "ts": "2026-11-14T06:06:02Z",
+   "tokens": 14292648.250328,
+   "wasted": 135678.179622,
+   "usd": 380.26105634047946,
+   "price": 2.6605360299953715e-05
+  },
+  {
+   "tx": "juv2aGioxWPfawWgCMwxuXbZuJJUNxMpQp362ohLdebEUWzfNVtcd9J3MgjYv3zE42iVsqqDZWLUmoQFuNhkSUL",
+   "wallet": "65doCsNnQiCswFa8knsdaEddjRf6bQevJ9bnbhSbfjyN",
+   "ts": "2026-11-14T06:06:28Z",
+   "tokens": 15527900.58313,
+   "wasted": 122498.590279,
+   "usd": 335.92993858544946,
+   "price": 2.1633957326492308e-05
+  },
+  {
+   "tx": "3Nw6UuCJH5q718yRR1ckAdcvgpfmPsDiGMbjgGi562tcyh2FeFXPMCBKXM7Pjdhcqp6yfrVkB2gsUSsATuGxW2Gf",
+   "wallet": "7UZoia2YqDAYfRdgm2DmdvdB8t5D5pnk2Wx6CDsNEtFN",
+   "ts": "2026-11-14T05:21:55Z",
+   "tokens": 23132968.90967,
+   "wasted": 127129.293906,
+   "usd": 335.66157884407914,
+   "price": 1.4510095100839672e-05
+  },
+  {
+   "tx": "ctdPTL1uBCPk9LYDHy2fbRaq3QetXp23wLQjZg1qoVGMgsX3RG4N6fuDFCPnW2oUnz6Sbib51A7d8hhhCDZb6DE",
+   "wallet": "37vAhWnYTgW9xC5Rn8fqDmabG8wESgZPnVQY3qhJ6TtL",
+   "ts": "2026-11-14T05:51:45Z",
+   "tokens": 10874008.666503,
+   "wasted": 108312.44503,
+   "usd": 320.71671397363303,
+   "price": 2.9493880666252322e-05
+  },
+  {
+   "tx": "2mNtoNVzhk4dpcgDMh2ZwV8hsT4UtYCD5C8Nv2Pj3xfxUeeiY9fpC1NnzXNcBUShoLKb1CJkeFuKfKE3QeqXLsFz",
+   "wallet": "3nme5no9iYW1Y6zr9RmssJasuAQpZMQRmGBrwjhQpyTu",
+   "ts": "2026-11-14T06:30:28Z",
+   "tokens": 7240930.002639,
+   "wasted": 108527.13004,
+   "usd": 320.6165769325747,
+   "price": 4.4278369880073976e-05
+  },
+  {
+   "tx": "3onSRyzDshLs1aCWer8J7nw8Tpz62JDHFBtEsxzYj31H2wWYV4Ek9Ca1rgCeDwDFWZVMPJv89of3KkHozVjkUhyC",
+   "wallet": "7WzeMPKtCMQHwR8rPQFqKpzNznKhmrpFT2t8y7VsHcu",
+   "ts": "2026-11-14T06:29:48Z",
+   "tokens": 6813365.416222,
+   "wasted": 107572.594277,
+   "usd": 316.4905235194766,
+   "price": 4.645142366295834e-05
+  },
+  {
+   "tx": "427YUzSq75MYEdDjbEKbkkwu3hXZnLRVGLcQ4qy4wbv6UhCMoC8JywtMxLjJGzt2Y7jWJS7HC64QZ5YQTw6uUJxN",
+   "wallet": "BN8cV6DX5PGv2EFe8fhBVxusucqygXKVqM1WentgvywX",
+   "ts": "2026-11-14T05:50:04Z",
+   "tokens": 4612854.298777,
+   "wasted": 93127.181977,
+   "usd": 310.49594917325135,
+   "price": 6.731102459827807e-05
+  },
+  {
+   "tx": "5PuQYJdWeTTANu2bP9HajErZDXym555XEjgM4317GLwe5vp9ue4NxE3LpMdvA1TP3vnxE2BiZbwWWhGfeap3WK8e",
+   "wallet": "BPkXxpYcmqE4NLa2q9kk9tLxiuELLpfEwAN25EZP2oYw",
+   "ts": "2026-11-14T06:43:57Z",
+   "tokens": 5136899.555001,
+   "wasted": 89411.831449,
+   "usd": 309.1674833316331,
+   "price": 6.018561975397102e-05
+  },
+  {
+   "tx": "5Yryb2DS6tcinpq8azAWUFdRReQN59GJd2hH2qW84YN9pEK3C13dxrLSxbh844gt9H8n3BJefo2SYJYCoWQyuiTU",
+   "wallet": "65doCsNnQiCswFa8knsdaEddjRf6bQevJ9bnbhSbfjyN",
+   "ts": "2026-11-14T06:07:13Z",
+   "tokens": 15527900.58313,
+   "wasted": 112265.977733,
+   "usd": 301.0996157796005,
+   "price": 1.9390877354452194e-05
+  },
+  {
+   "tx": "57rRHqxzKcQBoWdBuFmuxses3cD1yQwi4jbVgEDTwjSvpW87wNjHk5Da2z8L51N38Wsf6fdXCq19F2jbcMRd4nGM",
+   "wallet": "BkmUtHqTMeqY9QDpsPBuHsQYLFjAUq78N9yDVqgg3qo9",
+   "ts": "2026-11-14T06:06:05Z",
+   "tokens": 11840599.698695,
+   "wasted": 105042.05701,
+   "usd": 292.42857156520495,
+   "price": 2.469710817074871e-05
+  },
+  {
+   "tx": "5ZUND8mWEJDVbECnFS1tmev7HTWgNmJGNShKrMH3vaCEJNQNt6rFL9zAqRi9oRTcBRnT1bGyhuKYtYK3CYoe3j37",
+   "wallet": "2TsgwGSiD6ofGzy1MG2EToMBvCd2ge3CEMCjkkersDuF",
+   "ts": "2026-11-14T05:18:11Z",
+   "tokens": 53604273.984814,
+   "wasted": 118038.721051,
+   "usd": 288.81836356869866,
+   "price": 5.387972676404878e-06
+  },
+  {
+   "tx": "5mciEgk4RgVaHDURcSMQjcSEcJFJLRKAdQ33fu14pVRp6xsaHDtnRBPf91qWrbASuxt6mEfTcXi79RGt7G1oU7ZK",
+   "wallet": "CMBejT5iQpbvQ1Z1uJLwHfh7yHTPRYWU8ZvdCEFm95Fw",
+   "ts": "2026-11-14T05:51:38Z",
+   "tokens": 5425210.037002,
+   "wasted": 86979.170454,
+   "usd": 271.9882505678609,
+   "price": 5.01341420355705e-05
+  },
+  {
+   "tx": "jhHZv5pSSP3sLM8Zj5AT7h9QgHyh26WekH4UNA6Mu1BTxBQhAMHjVBEyJCKgYocdTXCjEsVXJN5bkpQsrLKctzz",
+   "wallet": "Fx5FF2ahwyjJncPKWsWSUMF6kfJGZJNJkJ4fQ688BU6p",
+   "ts": "2026-11-14T05:21:13Z",
+   "tokens": 18769154.316903,
+   "wasted": 97657.480948,
+   "usd": 254.09984549929126,
+   "price": 1.3538161667223104e-05
+  },
+  {
+   "tx": "59Gd1zqhZZqiWK958UKDm9Gpozpt5mremD7c5Ks4hY7sH3hdhtACHDnkcT5vWx4J9ZDx7TKgZShtzK7ncHDtx7LM",
+   "wallet": "4dXMKYj2qtxVmF1B2ADpQzDYL31a3QqScyhS3k2wdLPB",
+   "ts": "2026-11-14T05:55:56Z",
+   "tokens": 6749999.868756,
+   "wasted": 79474.45136,
+   "usd": 248.56690201599383,
+   "price": 3.68247269405953e-05
+  },
+  {
+   "tx": "ujeDTsdR76tr7UGgTkjARaVuYQbLWdZW2JmXXX9kpkeZnf5weFH7AnLokQjzgTXRd7GLU2QYK21Bej13oYpAiJx",
+   "wallet": "Evi9u3B5E5FhkPecKwn8EJ7GuMWghSBv8aR8sBurbcM2",
+   "ts": "2026-11-14T05:20:10Z",
+   "tokens": 17849362.124458,
+   "wasted": 92774.922407,
+   "usd": 247.88499849962247,
+   "price": 1.388761104017041e-05
+  },
+  {
+   "tx": "4Vc7jf17xbtS9DaSDPDTrXwWStdd2Z1o3xH3CxuTokFU6CJyaAQyMy1bHKnrbTbTe7YV7vAMioGVPdvLch7F8bPL",
+   "wallet": "6XAg5ZmRmC2ykd2NVHH9rsUpAvSFqM5UDkhWGjyXqCdm",
+   "ts": "2026-11-14T06:17:30Z",
+   "tokens": 7077287.88358,
+   "wasted": 74711.15828,
+   "usd": 237.3054372600733,
+   "price": 3.3530561588521094e-05
+  },
+  {
+   "tx": "Zqwf2vykxxt3kNnE2C1Ur6ZqNKb6zQuEM35FRffW2smGK7NnyBe2docjUvnmjerg3YxPHXRY1CnmkEXXUc5rSJc",
+   "wallet": "91m87AWbW2zhWWP57nNmSreowRYUA4EQjQD2PdBuBp3d",
+   "ts": "2026-11-14T05:51:40Z",
+   "tokens": 5198748.982248,
+   "wasted": 77105.93034,
+   "usd": 237.04038822349435,
+   "price": 4.55956594620953e-05
+  },
+  {
+   "tx": "452gETGZWcRtCLP4fSYgXhmbLFN334k5mb2zhrG7NzswZcrsfSHBhQY6sDpv8QFr6uns2eEjUkotA1NoRN8ZHWDT",
+   "wallet": "HgqwTy82eEniEJNFLpkv3WFVdVFzoYHrhAdjrfAaR5Uw",
+   "ts": "2026-11-14T06:31:02Z",
+   "tokens": 5175768.520002,
+   "wasted": 75946.282213,
+   "usd": 224.34862319349068,
+   "price": 4.334595380888556e-05
+  },
+  {
+   "tx": "fXzRZSje4sUMXQbcGYMpXiXokGRYt7A1ZgLfdKLoFxDAGRY6qjeK7gYkXbgywnGwJEcbBgoJKuuJm84fYYEPzS2",
+   "wallet": "3nme5no9iYW1Y6zr9RmssJasuAQpZMQRmGBrwjhQpyTu",
+   "ts": "2026-11-14T05:51:53Z",
+   "tokens": 7682046.909611,
+   "wasted": 73440.416653,
+   "usd": 215.48906970923812,
+   "price": 2.805099633531787e-05
+  },
+  {
+   "tx": "28zpbD2mukjhfmFSzxgL9wNCzpJdHuZXJbDJEgSrvrYPk3Dn1RnXw3JLuuXgactXRufuTZnAv1CxeTTFZTSwSJrU",
+   "wallet": "2TsgwGSiD6ofGzy1MG2EToMBvCd2ge3CEMCjkkersDuF",
+   "ts": "2026-11-14T05:17:48Z",
+   "tokens": 33791930.1627,
+   "wasted": 86461.516851,
+   "usd": 211.9270417802231,
+   "price": 6.271528165447948e-06
+  },
+  {
+   "tx": "2LhghrwT1GbTaznGH3uKPUaCevM16v52ygrKxQhNNjrRiDP17aQCpkyYYR7sFf4Aact6WgD769agx6j4xHtpYgs9",
+   "wallet": "91m87AWbW2zhWWP57nNmSreowRYUA4EQjQD2PdBuBp3d",
+   "ts": "2026-11-14T06:05:26Z",
+   "tokens": 6886426.148003,
+   "wasted": 71643.734471,
+   "usd": 204.88183318962098,
+   "price": 2.9751547288288978e-05
+  },
+  {
+   "tx": "mcBQfdbT2wmX4pWbtM1CBxSZkH9r4QVCC1mXP5P7eJvRJUr9Xk3AvzVVetQmGemfHgfPLVKhJeBfumvLUAEwduF",
+   "wallet": "7WzeMPKtCMQHwR8rPQFqKpzNznKhmrpFT2t8y7VsHcu",
+   "ts": "2026-11-14T05:40:57Z",
+   "tokens": 4756581.920232,
+   "wasted": 65728.666205,
+   "usd": 196.75813676226144,
+   "price": 4.1365446882215085e-05
+  },
+  {
+   "tx": "5yn933RYCdrAsXfubK3dVRMKhZ17XS7pMvmJw7pWU8wTbaJiqBwvpddfM2r27EnL1pZiFueJimfAkPnkddzARF5r",
+   "wallet": "5WTw6d5s78R4gUXPxBTP5ajcAv8EsPNRgbpkRa4SjuBE",
+   "ts": "2026-11-14T06:45:19Z",
+   "tokens": 4021448.06334,
+   "wasted": 64951.509577,
+   "usd": 195.80420385926737,
+   "price": 4.8689974550272534e-05
+  },
+  {
+   "tx": "36DgTSzLnWJhuFNoaSnmn82RVuda8MTrYSrf8sYg6GmnkRFdm9phgw6GYnk3a7RDVnVmjjv1mrmTUwvsGsngex5H",
+   "wallet": "Eh7FY5X8z4skGtV7t1A9HBqBjcVgNrYPFhTnVt7LCbRb",
+   "ts": "2026-11-14T06:52:48Z",
+   "tokens": 3065531.368059,
+   "wasted": 55946.136552,
+   "usd": 187.95252079556073,
+   "price": 6.131156338960135e-05
+  },
+  {
+   "tx": "53WpwsXAuedFYvGzn8qh3Coq8HvXv85S8bfAvXfy7WCznt8r8HCKwcFjnbB3g1PDaQHCxmVbyBTnyE53gFcyvAN",
+   "wallet": "HPZRuC47Rxb4EA6uR5NoSXGm6QFmkoMswcdZnyNY7SAU",
+   "ts": "2026-11-14T05:17:58Z",
+   "tokens": 27586210.589533,
+   "wasted": 71516.62872,
+   "usd": 176.27995022819928,
+   "price": 6.390147340319549e-06
+  },
+  {
+   "tx": "5wnBJdr4ZdVkVRD6fMaGtT5fRqPtPYmgRmNeojwAPFAWNn35iKtaJQs6KJknBz5nAB2yp4fDTNXpQ933VsquXjfJ",
+   "wallet": "2pszJZ9cKDsyaNnsm3RoYAFW1p8gZ32jKs65poc4XogY",
+   "ts": "2026-11-14T05:51:40Z",
+   "tokens": 3413994.079483,
+   "wasted": 51917.427698,
+   "usd": 159.37007251234857,
+   "price": 4.6681414437743505e-05
+  },
+  {
+   "tx": "3VfqEmcg4LZVP4BAfnoviHJhMEifvZtKQdzquhTJhW94h2gXfyG9SDprdAqx2gjCJ5kjHFC4EH2jgydw6oL88xg9",
+   "wallet": "4tekRos4JATJJkxQDyAUP62YUHHQFvQyuw3HtyL6khMF",
+   "ts": "2026-11-14T05:52:53Z",
+   "tokens": 4446866.059822,
+   "wasted": 51211.510834,
+   "usd": 156.3817125720628,
+   "price": 3.516672426565564e-05
+  },
+  {
+   "tx": "P9WFwkxcx94ogi6jpQYmWxSgE66C89QXi8aepGCsw3zJsAWDoXRLzAwrWCMNa471XsAoVYX3Zc9ySNyyPWSALSW",
+   "wallet": "23wQ7bodYreW3qhnh2YrW8dMkTYSkHHJqGcsiYEJS3Pr",
+   "ts": "2026-11-14T05:22:31Z",
+   "tokens": 11197259.377026,
+   "wasted": 59032.132477,
+   "usd": 156.27206213303174,
+   "price": 1.3956277770403646e-05
+  },
+  {
+   "tx": "413RTMBGZJVYik44v5h7W1NfAfqRc7z1Dmw57GxS3qEXr9Xg1UKx5oiRzWGcKpZUEVtXiuYeiBQJJy3WSRaR7aDZ",
+   "wallet": "GnB4q75p3Fe4DNZJvPmmJzbzHoV72htFcGBsKS5MLj23",
+   "ts": "2026-11-14T05:47:21Z",
+   "tokens": 2363994.544627,
+   "wasted": 46953.468188,
+   "usd": 155.2244443566753,
+   "price": 6.566193001987964e-05
+  },
+  {
+   "tx": "4shnMuun2GT1Nfb9dTwc1miiXUvsfaPUCrQL4HkRdnCM1sr8PpEfzf6HS2FFhtVumaq5xTC551E1nsAZAY1xbfWR",
+   "wallet": "47Kn9ZCwWtMKbiUK6UaoonAVK26mW1asFbwKdHqNTub6",
+   "ts": "2026-11-14T05:52:41Z",
+   "tokens": 3545815.816216,
+   "wasted": 49491.026779,
+   "usd": 154.67793367142747,
+   "price": 4.3622664483598485e-05
+  },
+  {
+   "tx": "3rk2dNJzLPPKxBbYTXnjWMjYmEroQxqZhkxvxErPjVDkMH2gV4MjP2rzT5Q36dS7naC6RQ3yL551dSaywKt6X4hg",
+   "wallet": "DNfTKU68aAU2qvTQQiszDStLnHcNY7KUnHqWYEQDxM5i",
+   "ts": "2026-11-14T05:50:31Z",
+   "tokens": 2351571.302027,
+   "wasted": 46123.284287,
+   "usd": 153.99199695637733,
+   "price": 6.548472369246886e-05
+  },
+  {
+   "tx": "2wwZ1B3n3CM2fBZKkvYg2VNoVgJzqz22ULfi4HXAUJUF7N8FVoss8n2t2Eympms6ErNJMDfqY138szSH29BJSRE1",
+   "wallet": "EYVDsrPpdDBirJVP6S9aQprcYRZQTjGvTdifpQYWL7D",
+   "ts": "2026-11-14T05:22:31Z",
+   "tokens": 11422392.466561,
+   "wasted": 57939.492801,
+   "usd": 153.37958564315701,
+   "price": 1.3427973700971582e-05
+  },
+  {
+   "tx": "3FFoT4boAKgetMg5GH4xkyVumXxtqgh4twXXKYjEXv3ed1nU11vU2s1BmrewL17EnVfHuUip65UtVcQHgx1mCY55",
+   "wallet": "4tekRos4JATJJkxQDyAUP62YUHHQFvQyuw3HtyL6khMF",
+   "ts": "2026-11-14T06:19:04Z",
+   "tokens": 4947361.226129,
+   "wasted": 50833.134159,
+   "usd": 152.81824223983878,
+   "price": 3.088883856564674e-05
+  },
+  {
+   "tx": "4EmPzvYNngWBjY2DbqabucucDtdtMU8EPADdDUb3EhP5xg5usRAWg3vwge8Xm5QYFqCNBLD2NtZ9D6kYqSfKiXrp",
+   "wallet": "FwANqW1cUQVn1Tdpf1SFM9ZrdBiGWqXQZQTHkQAXMTSe",
+   "ts": "2026-11-14T05:24:11Z",
+   "tokens": 9392975.270533,
+   "wasted": 55058.841344,
+   "usd": 149.49094329404878,
+   "price": 1.5915185443213244e-05
+  },
+  {
+   "tx": "4hsn4jkmzgZFtvN7qGzDXEqgzbRABjtd163Mx9WdbrcBDPwLGAYV8g5WR67hu8qLzkggacoJjLuysbrNLCLU2sqo",
+   "wallet": "2pszJZ9cKDsyaNnsm3RoYAFW1p8gZ32jKs65poc4XogY",
+   "ts": "2026-11-14T05:40:46Z",
+   "tokens": 3480686.0539,
+   "wasted": 49372.962172,
+   "usd": 145.16629337681266,
+   "price": 4.170623007328063e-05
+  },
+  {
+   "tx": "3BoRWXpsJQmvQTzdgpU3w58ifmKaDPnCq9581DPMWhpAgYewzBoo6iXRF8wd5ZNCpegv89GypVyuPSsRGJk8kBbY",
+   "wallet": "FwANqW1cUQVn1Tdpf1SFM9ZrdBiGWqXQZQTHkQAXMTSe",
+   "ts": "2026-11-14T05:24:22Z",
+   "tokens": 9392975.270533,
+   "wasted": 53129.918125,
+   "usd": 141.53953992758224,
+   "price": 1.506865884887512e-05
+  },
+  {
+   "tx": "5Dy2PwS2KqQpwVZmKrVUnKKEpNgWVoZWqgJB6yfvKhF5bjZJ363i81sJ4j1RSUkArJeipZUPa9ZL8nZ9HnEatz3i",
+   "wallet": "6LkZgN5kFWFSzmV3gW2yku8ddSHvbV9p2nCuphSaUo85",
+   "ts": "2026-11-14T06:04:58Z",
+   "tokens": 4595072.03747,
+   "wasted": 49038.133828,
+   "usd": 141.016001322507,
+   "price": 3.0688528965946086e-05
+  },
+  {
+   "tx": "5ZmqSunn5K81LD2XQW1guheAF6K4RA64xNxZhVueP9wfSnmFBm45qwaJ4G8khcyyqnavd2rWeomfniqbu74eboVy",
+   "wallet": "Aar7Uw5az7X8WqjuYi4jhbAxE3rwhDA23YHcTCtC34b8",
+   "ts": "2026-11-14T06:06:30Z",
+   "tokens": 6552415.856969,
+   "wasted": 49357.152292,
+   "usd": 135.43499112779887,
+   "price": 2.0669474295309463e-05
+  },
+  {
+   "tx": "4rqToD5dmnU4xtoZzvX9QchL3YAaLHwmw1THQ6g2VmMYKmrG6FvZcQJnstZB9jpoJuLehvs66PSaG7McWQbRP4Et",
+   "wallet": "7WzeMPKtCMQHwR8rPQFqKpzNznKhmrpFT2t8y7VsHcu",
+   "ts": "2026-11-14T05:57:47Z",
+   "tokens": 3993332.341328,
+   "wasted": 43968.868679,
+   "usd": 132.9320293331432,
+   "price": 3.328849641623769e-05
+  },
+  {
+   "tx": "eBa4hzCc93azd9jj5gQuFHQW3adS8Wi9E8AE4uuJbLbnok4mvCPmCyJAeVDxXo13XNgsKDCLv8ATcXsnXVPeLtZ",
+   "wallet": "HGPMTK29diAMQhx3bPBHmrxfENvwPgNbTSjWc1Vh8MgY",
+   "ts": "2026-11-14T05:23:35Z",
+   "tokens": 7565813.442082,
+   "wasted": 46647.181853,
+   "usd": 126.9694445125036,
+   "price": 1.6781995152865346e-05
+  },
+  {
+   "tx": "4XNbbw3Ha9hwSy6uSD8Y7kGscqwQYtAqdvPJaVZBgvpARTxRx2gjZoP73i2HW24Q8xXcAp6iZ4SLr2Xcwns7NHH3",
+   "wallet": "BwJzGaKo6qGB5XaS5URw31jJDmxqbGYvAaA4kJ3X4Qhy",
+   "ts": "2026-11-14T05:51:51Z",
+   "tokens": 4420170.9119,
+   "wasted": 42419.957375,
+   "usd": 125.78209202054165,
+   "price": 2.845638653517009e-05
+  },
+  {
+   "tx": "3tfEhyoAzfdfJfNgyCpQNZqGvbHHBnq6f46TuMsSQd1qFTdF2ioSxBrh8Tx2ZyuGqa1XVjSzkiUVQwgMpiTL6DsJ",
+   "wallet": "JCLJ4zgu7ttdjTkiLJM8PvPsXN2P59rNM38D5DGZ6BmW",
+   "ts": "2026-11-14T05:30:01Z",
+   "tokens": 6375310.961881,
+   "wasted": 45894.785633,
+   "usd": 123.99983334057212,
+   "price": 1.9450005510631073e-05
+  },
+  {
+   "tx": "44cfqWKGT98cJ5LQDQFujua7JmCjNnCkyeMBryPwLhEnQwgUGZbjcS5EDa3LVcnXoMKd9Jo6j7KhVttuMy6ALBzH",
+   "wallet": "7i7j7M5GFqwebspxokg1AhHFmgNtdZ57B916Dy4V7Y2x",
+   "ts": "2026-11-14T05:51:39Z",
+   "tokens": 2564811.454182,
+   "wasted": 40004.833723,
+   "usd": 123.75389605222952,
+   "price": 4.8250679733375794e-05
+  },
+  {
+   "tx": "36CeMYawzNRqhDWVS8hVohmBpnS4WDgDwERsq51oHAvCYuCCfhZsm5UHHQT9NreyXr1AKvQcHHWWQbKiRq3Zo7k7",
+   "wallet": "4tekRos4JATJJkxQDyAUP62YUHHQFvQyuw3HtyL6khMF",
+   "ts": "2026-11-14T05:51:42Z",
+   "tokens": 3289659.636051,
+   "wasted": 41108.532899,
+   "usd": 122.63805541944808,
+   "price": 3.727986144082257e-05
+  },
+  {
+   "tx": "JEEyYtTrhDHkwGrZag4oZgHZmwS4HaQEWDSnioho4qFPQng8i6DR2izCKeu5qu9mM3377U8iP6BwWGp2hGYuPm3",
+   "wallet": "GtnKRansZqZvMLQsx4hupFzkMcPgbF31oeruQkRm3fX8",
+   "ts": "2026-11-14T05:51:58Z",
+   "tokens": 4506252.111888,
+   "wasted": 41403.98653,
+   "usd": 121.1186875987522,
+   "price": 2.687792085117197e-05
+  },
+  {
+   "tx": "3dGk1c694T5eZHHAYVfYWfVp3FeZDu9w1Uv371jkv5YwD818owD2hDyVrDRkdVv7Ber95QwiUxEbFWUt6Z9nqxBu",
+   "wallet": "4tekRos4JATJJkxQDyAUP62YUHHQFvQyuw3HtyL6khMF",
+   "ts": "2026-11-14T05:23:26Z",
+   "tokens": 7031427.015089,
+   "wasted": 44329.936998,
+   "usd": 120.18455739992214,
+   "price": 1.7092484518720543e-05
+  },
+  {
+   "tx": "fKWe7AGj2xVxUqZ6LnNHNGvwPKs4hdtRAM6uBEFP5qWQc7vg3wn1AcsK4EGG2LKPRBHf1uVnSatviPM2puhUVot",
+   "wallet": "DEZULr1C4LSntdEJqj24XQaE6UMZAwXpPbApY3GMQW67",
+   "ts": "2026-11-14T05:47:06Z",
+   "tokens": 1634140.541493,
+   "wasted": 34461.810883,
+   "usd": 113.30415596873556,
+   "price": 6.933562511411501e-05
+  },
+  {
+   "tx": "2uaAW638eGoiQZzvg99pL3nzuopdAmjvzuxUyBe8buEaWdj6bAXvqabS59WMV7efS3uHHphPHZafNXPWHRzHUBfh",
+   "wallet": "GtnKRansZqZvMLQsx4hupFzkMcPgbF31oeruQkRm3fX8",
+   "ts": "2026-11-14T05:52:50Z",
+   "tokens": 2582582.977544,
+   "wasted": 35546.143277,
+   "usd": 110.55178262284869,
+   "price": 4.2806672073701145e-05
+  },
+  {
+   "tx": "5DCyT1nuuoUbD9cJYumy8KaQssVkbbjfZcVLw43RxcHzEVbs82odSnZ3oT3YYEGygxaH2RVj5aSmBCtmt66Nhi98",
+   "wallet": "84yrJ6Hq1Ti6NcA1dvK4oy727QJKsmMWqJfQSbrtCYVc",
+   "ts": "2026-11-14T06:05:59Z",
+   "tokens": 3977938.580441,
+   "wasted": 39398.738051,
+   "usd": 110.05577524084234,
+   "price": 2.7666534566916668e-05
+  },
+  {
+   "tx": "2oSE2grpQGMzZN8deZXg3t6gvk5ugyQVDux5b92Qsc8L9RTFqbPoYWVz1YjxhRF7XbcUidpfzUbmGwhvDZ3K2PZc",
+   "wallet": "BFzVeEhJTD6o2FsjH4sXBEokyfKxhWCrmuNu4iYLi9a6",
+   "ts": "2026-11-14T05:44:09Z",
+   "tokens": 2008121.007719,
+   "wasted": 36641.641039,
+   "usd": 106.4773976001344,
+   "price": 5.302339709153323e-05
+  },
+  {
+   "tx": "kZbnESbgP5geWvrP7MbSTs6WBV91bA5dk25PV7GZzV6nesCyRSJmaBVUw8H7iiCgetaxK8duRL7JW76NHt8ue4w",
+   "wallet": "migk1CbuPnvUPBABsc9gMrBBjbNNZeJFWgKJcs5FCTz",
+   "ts": "2026-11-14T05:51:38Z",
+   "tokens": 2015719.497998,
+   "wasted": 33049.59812,
+   "usd": 102.19929846936814,
+   "price": 5.07011509145354e-05
+  },
+  {
+   "tx": "2UyqGoQNyjWFQ2EuGPvro5Z1TgX74WwErpUzosCFJWzgE3phLAeGDcS7S9hNh3cG7cYxsCA5sFSiiuanfykCqQtj",
+   "wallet": "37vAhWnYTgW9xC5Rn8fqDmabG8wESgZPnVQY3qhJ6TtL",
+   "ts": "2026-11-14T05:50:24Z",
+   "tokens": 1487165.759495,
+   "wasted": 29794.065535,
+   "usd": 100.3974746384238,
+   "price": 6.750926989639406e-05
+  },
+  {
+   "tx": "5srLxmgnxybvrHPr2cDTjcvEcTX5mpxhwLAnBJV1kzzPX2jhjcQHR3WENYQ2dyW5g9BGFULaJRwGoUv4B5L4Eqh",
+   "wallet": "APagVFoZ82xuUq5QSCsecuz4PdVAGhRqNEz78rEd4hjY",
+   "ts": "2026-11-14T05:50:30Z",
+   "tokens": 1510205.870323,
+   "wasted": 30004.400043,
+   "usd": 100.17580624139396,
+   "price": 6.633254989266366e-05
+  },
+  {
+   "tx": "2CMoB535JMihtUFBJaFGdHpE32PnR6XYS9Vxn4BMukboSgPtvBVpnQdNYNrnm32yRxfk4goYUPXK3FaczFU8qi31",
+   "wallet": "9HJ1anpgtqsCTUafanE2KJxNYSBMVkCmkWVmBpavFBdD",
+   "ts": "2026-11-14T05:51:02Z",
+   "tokens": 1568219.198408,
+   "wasted": 30022.485301,
+   "usd": 99.25779756802336,
+   "price": 6.329331873298473e-05
+  },
+  {
+   "tx": "3NJf3TutY4KrgoXSRYkzoK3eWfG26QA57v9uBQ4afjcB4vcdnvZEEn95dfLRjhkYPwTkvKxZ3M2uXDg9oy6vrMmd",
+   "wallet": "4tekRos4JATJJkxQDyAUP62YUHHQFvQyuw3HtyL6khMF",
+   "ts": "2026-11-14T05:54:42Z",
+   "tokens": 2561992.548278,
+   "wasted": 30727.724582,
+   "usd": 97.35545966765208,
+   "price": 3.799989962230292e-05
+  },
+  {
+   "tx": "2JMXSsc2827okRyJqximzHWPoaz4x6cYQWoLUHJg3eJwFqFaRdNzTuXLxkVfiH8upToFFxUhYZYkvNeNPpjbZpUn",
+   "wallet": "GeUAqeR3PenH3QYTUKLW1teB8ZFacsinATB9TaT5E3zq",
+   "ts": "2026-11-14T06:01:05Z",
+   "tokens": 2951506.744192,
+   "wasted": 32381.517643,
+   "usd": 97.32110919760508,
+   "price": 3.297336500725075e-05
+  },
+  {
+   "tx": "EiKKEks2ZppnYdZpwUHTH4JX4mHf2sTqQ11y7QyPsEMfeJeGgG83D6fuZdxvc3f1qjeFhqrqbJQuPC2fFjSz6r2",
+   "wallet": "GtnKRansZqZvMLQsx4hupFzkMcPgbF31oeruQkRm3fX8",
+   "ts": "2026-11-14T06:34:00Z",
+   "tokens": 2170721.236593,
+   "wasted": 33353.993295,
+   "usd": 97.2907484806704,
+   "price": 4.481954976096821e-05
+  },
+  {
+   "tx": "4zQGpjpKc4ohD7QHJgKjuzZ27gNY4Zy8HzKzCD3G2YXbD6u13M5QBjYBdFDnTpgLftEf813BnAZ7Yc5V4LLfsDJf",
+   "wallet": "GM5FPV1hCHtUCXQSTuHfYrndNu5HPDGwKwo1bWNtwhhh",
+   "ts": "2026-11-14T06:28:34Z",
+   "tokens": 2535704.98357,
+   "wasted": 32173.245003,
+   "usd": 97.16362479977765,
+   "price": 3.8318189785225616e-05
+  },
+  {
+   "tx": "3DGVbzEDiLFGPgMfeKKYxr58phZDVrXZHDaFqmz9jFcrdmJQ2BiEa3Jukz6PGzZEmTT8XQyr4RMJ5XdbiFPYn7Zy",
+   "wallet": "HSq83tgUjtU1RShgpQrmM55Y5hpPyvMQhVmhdBjvYPbW",
+   "ts": "2026-11-14T05:51:40Z",
+   "tokens": 2398790.896177,
+   "wasted": 31600.068958,
+   "usd": 96.63236189429551,
+   "price": 4.028377881886262e-05
+  },
+  {
+   "tx": "2ZcspkBb2dZvCY3EKdZs8zTDrsGmHQS7c9Ebyykangohhz34VRc5kZM33LKThrpigFEECemDHSc62xatkNhQx25r",
+   "wallet": "84yrJ6Hq1Ti6NcA1dvK4oy727QJKsmMWqJfQSbrtCYVc",
+   "ts": "2026-11-14T06:06:16Z",
+   "tokens": 3977938.580441,
+   "wasted": 34069.329729,
+   "usd": 94.92870987596913,
+   "price": 2.3863794766143724e-05
+  },
+  {
+   "tx": "2CaHFDFVf3mewFpGiJuNMmGKe2sGTPKAk9f4eemgUUwxmZ1kzHAPteJn4HmfzKGeVJYFNDibBvmskDRLZxR3Apr5",
+   "wallet": "Sq3WYpJZCEnCSczvdwev1KwPQDNjpGfWM23SuVvVEhH",
+   "ts": "2026-11-14T06:58:05Z",
+   "tokens": 1370074.591289,
+   "wasted": 26586.180475,
+   "usd": 93.21906316664432,
+   "price": 6.803940731354015e-05
+  },
+  {
+   "tx": "4k7DGNTKhB9ujUQrBHrttTHgxMxJBhXdKACbW8XEp35hSBCuHvWYSuvpq9GdZdjrP1rAfF4s19PkFKSRdBqY7pzT",
+   "wallet": "BwJzGaKo6qGB5XaS5URw31jJDmxqbGYvAaA4kJ3X4Qhy",
+   "ts": "2026-11-14T06:24:55Z",
+   "tokens": 3000000.0,
+   "wasted": 31474.656058,
+   "usd": 92.01916070385076,
+   "price": 3.0673053567950256e-05
+  },
+  {
+   "tx": "4LwXMfcYtgv8emHVL6Eez4qyoXLASzr2dE52Uk2zx22AVm7wpS89sT7vkJKHpCKErJuxVj8GMb8smD164VQbf57t",
+   "wallet": "73MdyYee8pbDn5ujJWoLpPEwGYfDrZQPyaqumUacLE95",
+   "ts": "2026-11-14T06:53:14Z",
+   "tokens": 1510692.947035,
+   "wasted": 27435.434238,
+   "usd": 91.82833478842589,
+   "price": 6.078557192489388e-05
+  },
+  {
+   "tx": "gofC213x5rKsotYgkaytWqg8kt5bnVuTrgYGY4tSmFFGTK9NtfsRD8j9XFMtVWVP5vS8yHYFRvCWNTDosffuhWK",
+   "wallet": "4tekRos4JATJJkxQDyAUP62YUHHQFvQyuw3HtyL6khMF",
+   "ts": "2026-11-14T06:45:12Z",
+   "tokens": 1815293.61477,
+   "wasted": 29951.258682,
+   "usd": 90.87334188363693,
+   "price": 5.005985871610676e-05
+  },
+  {
+   "tx": "5uTHerG7VtUWevPwZGTt8dgB7yT4ooWes7oX1oKkjgrkxGDfkfTqZXz8udGXfxcAVmjgW46C33xYUP3uqvYWRSQZ",
+   "wallet": "9AdCq2Dab4NwJrYWQ71tyGMqGYk4xQhgMAJPVbHzoTdT",
+   "ts": "2026-11-14T06:05:48Z",
+   "tokens": 3190406.060017,
+   "wasted": 32054.010491,
+   "usd": 89.54308367078022,
+   "price": 2.8066359575026352e-05
+  },
+  {
+   "tx": "zQrfchkcwcjSP5EiGdS2RHwE7gdzZFgVeEnMNxGpJzzv3WxJgDRbptBBq21Miqa5CHTHsDfrqQEuhGyaeeze5FK",
+   "wallet": "9ZU5MWCL3Yqv6YKAGdQoK5ZdTzY42CrABXbnQQAgU2vg",
+   "ts": "2026-11-14T06:36:37Z",
+   "tokens": 1596813.689003,
+   "wasted": 28101.437588,
+   "usd": 87.79143671362829,
+   "price": 5.497913583671899e-05
+  },
+  {
+   "tx": "4JNYKSoJVrsFVi1csJLisnCbZMWpXZ1xo8Dcfh2VzLtU1AhyRw4wBtPweqS1bxW6qqphe7Es31c3hdCM3LocezVr",
+   "wallet": "GtnKRansZqZvMLQsx4hupFzkMcPgbF31oeruQkRm3fX8",
+   "ts": "2026-11-14T05:56:30Z",
+   "tokens": 2582582.977545,
+   "wasted": 29052.656724,
+   "usd": 87.50113960105675,
+   "price": 3.388125003605314e-05
+  },
+  {
+   "tx": "5WiEzo1w2FQQfk3GH3S5BhTeYeza5CAgzRd7hJwP2C349gspps2J6mGZzLVkmcxpHQDo2CWnjWDn8emdxzcsWW9",
+   "wallet": "Ap2hDCPAV8eQSRwSqpLyZMHgGFMx3oS1Fy1UFtbfPNb5",
+   "ts": "2026-11-14T06:45:01Z",
+   "tokens": 1668834.380844,
+   "wasted": 27812.674778,
+   "usd": 85.53741982227737,
+   "price": 5.125578715547404e-05
+  },
+  {
+   "tx": "5GtNxCw9Jtj3bLecXp5Q1x5buyHwxbmeq1DwsFovEEEy98nEL5VbtSxYQHn55uPAzJ4Gt8c5524nY1sv5SingEe5",
+   "wallet": "DtyUcxNUN3caT9PUxX7Pgj9p2JSiJGRMHox6bAvxqvga",
+   "ts": "2026-11-14T05:24:24Z",
+   "tokens": 5823322.016663,
+   "wasted": 32060.909391,
+   "usd": 85.1620928566267,
+   "price": 1.4624314542960487e-05
+  },
+  {
+   "tx": "4aNwifaZZEGTUszSDyTaPyRQyrGHJQSPtYAQufMBbJKkKMM8nhViwSKfiynzFCTgzKxRFuya9rDySBYqJYDufSCU",
+   "wallet": "migk1CbuPnvUPBABsc9gMrBBjbNNZeJFWgKJcs5FCTz",
+   "ts": "2026-11-14T05:52:58Z",
+   "tokens": 2417796.080644,
+   "wasted": 26942.755386,
+   "usd": 84.16546235617584,
+   "price": 3.481081925393711e-05
+  },
+  {
+   "tx": "2K1wuJaMP68DJHW6XBoZkuvmf17FuJa7dVvo1BuMdRQLyxJLQYyUzRa4XDYQQwrA8R8SZCedPV8dxAguMznqcB8r",
+   "wallet": "4dXMKYj2qtxVmF1B2ADpQzDYL31a3QqScyhS3k2wdLPB",
+   "ts": "2026-11-14T05:55:55Z",
+   "tokens": 2249999.956252,
+   "wasted": 27114.270988,
+   "usd": 84.1614384376897,
+   "price": 3.7405084477372145e-05
+  },
+  {
+   "tx": "3bcQ4m1yFuycqTriKDtAz1ff4GaTf5uuGRgdhHNMjJZUjgm3LY5jvh5KpzeN7wx8vzza2xTdgxPfFdkiKrUG9AeK",
+   "wallet": "4u6awiSAUkNKs8JJLZP4kEa5QpkqzhxEYvSmnjoQec8E",
+   "ts": "2026-11-14T06:08:47Z",
+   "tokens": 3492396.090121,
+   "wasted": 28265.730302,
+   "usd": 83.54264320535403,
+   "price": 2.392129673998677e-05
+  },
+  {
+   "tx": "3VZHp99L3bLKh69tJNJKtrW9LGGBrQ8cr6RWBXgyxWFezw6TF4G26pqt2UufL4Nn4tiFCHWjVDSvJ4S2bZeZajkV",
+   "wallet": "7UgVQ191XU1NfJiBumRqNTEuEzqtKK2XWaVeHQ8jpWvw",
+   "ts": "2026-11-14T05:51:41Z",
+   "tokens": 2093933.873568,
+   "wasted": 27225.101744,
+   "usd": 81.65212820102624,
+   "price": 3.899460686496918e-05
+  },
+  {
+   "tx": "26KCR63Uc9D4qzFaoW7hqK9aEzErVB9DuGNSAYJBig3S8gBTzAVtnDSmpSM5NE2Jhuf9ntJRHu4HGJVkG3gUAjMY",
+   "wallet": "2HjZaHaUvQNxtPojxLGdvBUZ82yopDBtgwnBnTg5Badf",
+   "ts": "2026-11-14T05:25:37Z",
+   "tokens": 5518357.448567,
+   "wasted": 32342.058889,
+   "usd": 81.39964463162931,
+   "price": 1.4750701706133057e-05
+  },
+  {
+   "tx": "5PuQYqcW5fmU5sSmqoTbCV9dwwCYozLgvhaJujU6dhkKxPiRH5x5LVXWGi29FdxgoHszjnJHAS5wVmZCzLx9GCv6",
+   "wallet": "3VBnRtZB65sBmWKYHjg6szBSLbNNBcgV5zHXmvuUPVSV",
+   "ts": "2026-11-14T06:53:31Z",
+   "tokens": 1321792.004629,
+   "wasted": 23710.632332,
+   "usd": 79.71065823802827,
+   "price": 6.0304993492831294e-05
+  },
+  {
+   "tx": "432sAv5XQ5yphUj5rwd5r1sEk19S7z2DCBiNcPiZD2MBw9rJh6uZDyc22nfvUbFnmWviCxmrFZ59vknxo5F5wHiK",
+   "wallet": "E17TvjJnocjNezKSfTXTsDfjEysq4vygpZXFZoRe6qkf",
+   "ts": "2026-11-14T05:58:30Z",
+   "tokens": 2401741.88037,
+   "wasted": 26458.661003,
+   "usd": 79.14005073722839,
+   "price": 3.295110577204761e-05
+  },
+  {
+   "tx": "2vjrudEz82Wtqj5AiLXKfsjyBR1c7awkRTYD4hREic4pHErax9h8zqRnLWX4fbkqCYu6e6cMmJBGMXqCkYf4CQuX",
+   "wallet": "DNfTKU68aAU2qvTQQiszDStLnHcNY7KUnHqWYEQDxM5i",
+   "ts": "2026-11-14T06:07:09Z",
+   "tokens": 3885328.396733,
+   "wasted": 28601.14593,
+   "usd": 77.24093709075318,
+   "price": 1.9880156631213377e-05
+  },
+  {
+   "tx": "yCzn55RW2FHQ5gykq6wvpwsJtboSDb81XzwBfJDCp1Ayy6SsH8PhJVrE8QE9Ce8pxRK6As14Eovd96G5wZCukRv",
+   "wallet": "DDZeB9gy2AXfwG6giQjCVsy2dXmDtA9ki4WnLRWnmmE5",
+   "ts": "2026-11-14T06:48:30Z",
+   "tokens": 1441966.403202,
+   "wasted": 23771.948049,
+   "usd": 76.92409729312818,
+   "price": 5.334666405702114e-05
+  },
+  {
+   "tx": "2BF4HEpPtYK5qWX6oQk6Y2boPZgDtfd5ECnBtX24mX2Mx9437Q2BDv15qUU6GVET7p2GFLS6Bm68RKKxdchR48ZR",
+   "wallet": "BN8cV6DX5PGv2EFe8fhBVxusucqygXKVqM1WentgvywX",
+   "ts": "2026-11-14T05:53:31Z",
+   "tokens": 2180543.065194,
+   "wasted": 24652.489087,
+   "usd": 76.65659069014325,
+   "price": 3.515481620782537e-05
+  },
+  {
+   "tx": "24eKSuVuCiFiSucT8E1xXiLqc2Mj3MeBWwUHpwfi1V3Bkq2Cm5b27pMqz3RmG6b4dttGG4NgobxKi6bcuHcRwgSQ",
+   "wallet": "BwJzGaKo6qGB5XaS5URw31jJDmxqbGYvAaA4kJ3X4Qhy",
+   "ts": "2026-11-14T05:55:24Z",
+   "tokens": 2046534.146838,
+   "wasted": 24556.808251,
+   "usd": 76.3449096429904,
+   "price": 3.7304488547599945e-05
+  },
+  {
+   "tx": "45vkxzYva7KXWyjemL7V9rDLZiWGVSXvtQheBGURxYxEBHC13LcKRk93Ehn5U2A3ty8MTjoA4eCdPSgm3xaVMcXF",
+   "wallet": "DEZULr1C4LSntdEJqj24XQaE6UMZAwXpPbApY3GMQW67",
+   "ts": "2026-11-14T06:06:17Z",
+   "tokens": 3226721.844159,
+   "wasted": 27180.447948,
+   "usd": 75.46236317621388,
+   "price": 2.3386696102366422e-05
+  },
+  {
+   "tx": "56vAQ8jDCChzc8GkNX9HGptJjaZbLJ77f5phATEYhGeKrF7KxK3w9HDe1QVKzmmwn9Ug7Jgcmn8H2VqtAydzJice",
+   "wallet": "HSq83tgUjtU1RShgpQrmM55Y5hpPyvMQhVmhdBjvYPbW",
+   "ts": "2026-11-14T05:39:07Z",
+   "tokens": 2398790.896177,
+   "wasted": 26622.260421,
+   "usd": 75.15954248923548,
+   "price": 3.133226101909037e-05
+  },
+  {
+   "tx": "4eNKKdwrggmXgjfYBnCfarX2pv7Az5Lr6bTLmg9P5htwVD4e6Hsqok9CyCXfdFjptUHW4U5z8rrC2GNShHtBN5WQ",
+   "wallet": "FN4t2f8BAmXMbsawvFoKvmXb6DWC6SbYhRGEttWpxAE",
+   "ts": "2026-11-14T05:52:56Z",
+   "tokens": 2126392.247537,
+   "wasted": 23967.438771,
+   "usd": 74.3187786929773,
+   "price": 3.4950644115195936e-05
+  },
+  {
+   "tx": "39tiQpoMVGuPNG8puMBHJqfMPToYWRNHvL6NMtmFF96TJNPrViVDwaPpY6HSBGnMvTGns8CxTz7PfXeuveGy4VJb",
+   "wallet": "Aa2bJuXsJotfrw8dmiXL3LtR4gixcs2am6pNcjbamiAr",
+   "ts": "2026-11-14T06:31:09Z",
+   "tokens": 1756812.584756,
+   "wasted": 25224.32978,
+   "usd": 74.0494683285375,
+   "price": 4.214989633559694e-05
+  },
+  {
+   "tx": "sbkMW2rx7qDfXCQZiYfxhvRKjksis7ndPAvfYGUeUAkE12SYP5gBBREoKVSLEkMwtAwV4UVQdB3muNgENgQNz69",
+   "wallet": "68njY4gCRYyN1n2piszwi2x1JGF6oFxykEhKGDFNSV7o",
+   "ts": "2026-11-14T06:47:34Z",
+   "tokens": 1363022.111587,
+   "wasted": 22781.427668,
+   "usd": 73.64121431349015,
+   "price": 5.402789410932438e-05
+  },
+  {
+   "tx": "ZB7Evd9NkFXuoXoDRvLtCoqaXeQPffmxMtbhghE6o3iFNRsvFAoRbtwpQBsr3CZNYbhNQEcQiQcMLKhuQ6n5FWf",
+   "wallet": "9XiHbafhEfkwPuRoUay2tCRnULUkMiVkEk3LWmfVP39D",
+   "ts": "2026-11-14T05:52:53Z",
+   "tokens": 1747813.868467,
+   "wasted": 23659.081096,
+   "usd": 73.58196243138353,
+   "price": 4.209942703791563e-05
+  },
+  {
+   "tx": "kBWaxf15ZaJiii8Q93ytu4p29gA6YocDpRqz233b3gCg3EwuiWz9BJcTX6avJAL47xV6pjDiiU6dodoV862chqV",
+   "wallet": "68njY4gCRYyN1n2piszwi2x1JGF6oFxykEhKGDFNSV7o",
+   "ts": "2026-11-14T05:48:12Z",
+   "tokens": 1125303.312948,
+   "wasted": 22494.916932,
+   "usd": 71.59056998848018,
+   "price": 6.361890982168322e-05
+  },
+  {
+   "tx": "2K1FUKLHHAX9fwZKxGYTGSv8dbNkhL4hJ766MSVhH5q7QADruT2gQszqjy9smkNW3M1dodDo8HcW7KECF3WGYShB",
+   "wallet": "C5Aks9XD8vyKEimUyYtnjS8XwzMECzZBVnMYs4DJxc4V",
+   "ts": "2026-11-14T05:32:14Z",
+   "tokens": 3649550.248951,
+   "wasted": 26813.690247,
+   "usd": 71.30703199544519,
+   "price": 1.953858068290501e-05
+  },
+  {
+   "tx": "5TCLswgBE3BKzojnFZ6A1K7ZJgbyzkSAcQzSh3diQrV5nURRNzvh1cjgrHcAX1efYQ8GPu8M3b1R7BDXnG3VthdB",
+   "wallet": "FMc119xsSzQpoMaVKvVAh5b9Qid5e48ckJuNzVfp7cvs",
+   "ts": "2026-11-14T05:59:26Z",
+   "tokens": 2105086.514403,
+   "wasted": 23472.388986,
+   "usd": 70.61103797844845,
+   "price": 3.354305749209251e-05
+  },
+  {
+   "tx": "KWm2xHJRpQjvRzSd2iwNNAGi7vZxqWVd3a4JQWPBBicdPTZZfTesfo9du8pgFZiMaC8kmrcNKkk6pvJXDYyoLZ5",
+   "wallet": "68njY4gCRYyN1n2piszwi2x1JGF6oFxykEhKGDFNSV7o",
+   "ts": "2026-11-14T05:51:54Z",
+   "tokens": 2531932.454135,
+   "wasted": 23640.15201,
+   "usd": 69.34721846834533,
+   "price": 2.738904758501421e-05
+  },
+  {
+   "tx": "n1Z1ZL1Nhe2nEoSmEwqySpTdPABJFoAS6HrKJEXSM6cs8zJybE2CtweFrHwRMD6AfRLVZPVCdxKvJZUQ9TS63jh",
+   "wallet": "A8bZpn9bdXVcxw4gjgedS8HJuyf7zs7t8a9mCm91uv2M",
+   "ts": "2026-11-14T05:51:41Z",
+   "tokens": 1740221.338943,
+   "wasted": 22389.728586,
+   "usd": 67.22550336883623,
+   "price": 3.863043272970586e-05
+  },
+  {
+   "tx": "hc1KBnMXQ7vXPnGAi5xBr1RfVrbZJ2DyWET6wAr1NN2s31Q1jFthhUDfHvCZzCUaedhVjPx5czbx72ob4Jior5W",
+   "wallet": "6LkZgN5kFWFSzmV3gW2yku8ddSHvbV9p2nCuphSaUo85",
+   "ts": "2026-11-14T05:48:34Z",
+   "tokens": 960967.001356,
+   "wasted": 20087.926368,
+   "usd": 65.0894038506342,
+   "price": 6.773323512543919e-05
+  },
+  {
+   "tx": "4wofWxgKDKUYrGgixhvQNHh8GsdAomKq5HJkZrRdFgngbBSQr6aqBFKbQokvDHfXpcfnd3RXF26N9hdRMzFco794",
+   "wallet": "FYNbAtfjUy32U3Fpu6ZKpssZhFCifEkUSpCdVq5oQ6yC",
+   "ts": "2026-11-14T06:17:16Z",
+   "tokens": 1861781.225167,
+   "wasted": 20099.354698,
+   "usd": 63.44507829184897,
+   "price": 3.4077622780924764e-05
+  },
+  {
+   "tx": "4M1PY7F2DV51vRJDpPauvhSGqWr9d4nPdannTpAEezcVmjCcwoHc8reSu1CFc4LRAaCDasrEdMn1VMerKXVNvUoq",
+   "wallet": "9HJ1anpgtqsCTUafanE2KJxNYSBMVkCmkWVmBpavFBdD",
+   "ts": "2026-11-14T05:56:01Z",
+   "tokens": 1745309.186281,
+   "wasted": 20356.786869,
+   "usd": 62.61756469672228,
+   "price": 3.5877634283327876e-05
+  },
+  {
+   "tx": "3eV51Sh6qcvKm1kf239PKabFeoukaAWoVJHsN5P2kqQgnkkQ3rtHGtGKF3udipGqvixk3y9PKinHdJM3x4isBqSK",
+   "wallet": "BboTccXvJW5D9PnCMkURJLa34DtbUvkg4HK9MGuCzNG2",
+   "ts": "2026-11-14T06:50:57Z",
+   "tokens": 1061554.944766,
+   "wasted": 18980.65582,
+   "usd": 62.59767444755893,
+   "price": 5.896790812025036e-05
+  },
+  {
+   "tx": "d8GajMGxC6aQKxVpbfsRiwoNwBU7c4pQk3M1dtQjaEQ8krgA5XwMZsu16jZyccS7zNvJDWbPRTyR9TcMAbkFNCv",
+   "wallet": "E17TvjJnocjNezKSfTXTsDfjEysq4vygpZXFZoRe6qkf",
+   "ts": "2026-11-14T06:46:19Z",
+   "tokens": 1231906.375115,
+   "wasted": 19991.610061,
+   "usd": 62.262598523257104,
+   "price": 5.054166435127411e-05
+  },
+  {
+   "tx": "2LZp6hiMTSgwUpWePHmKff5H3sFkaeNzR3FwKC3yVHh85bMRggZ9RzUuoxGSvfTBCAWbks6ywE3HhpsaE9WCaZYE",
+   "wallet": "4dXMKYj2qtxVmF1B2ADpQzDYL31a3QqScyhS3k2wdLPB",
+   "ts": "2026-11-14T05:23:44Z",
+   "tokens": 3762485.0,
+   "wasted": 22754.41284,
+   "usd": 62.17232899800376,
+   "price": 1.652427292015882e-05
+  },
+  {
+   "tx": "3pMSFjDTgbz7eJfjQBrDLyKNi8yKLrJjniVArSgYX7gwgGvn95k8zV6yDgJKrNncX9xF3DZ5e8SKZ881oEJhcLVn",
+   "wallet": "6LkZgN5kFWFSzmV3gW2yku8ddSHvbV9p2nCuphSaUo85",
+   "ts": "2026-11-14T06:37:53Z",
+   "tokens": 1124102.626827,
+   "wasted": 19090.752653,
+   "usd": 61.98169772896465,
+   "price": 5.513882473873417e-05
+  },
+  {
+   "tx": "4zCcCNDrpd8Sms6NixP6MinYtPPeFrVYPquNWW3xdmNb9WDKeLtW3va6n6jXrAFapx97kGbLD4cq1AKqaUTpqnpW",
+   "wallet": "GHUJgzjk1DuoHM6Jc4bHqGriNCSRKmLXDYg8RWj2sEvm",
+   "ts": "2026-11-14T06:53:24Z",
+   "tokens": 1016244.522561,
+   "wasted": 18319.564938,
+   "usd": 61.595601572450825,
+   "price": 6.0611004738530883e-05
+  },
+  {
+   "tx": "2hpThDbonHdGTNh6PvuEAuYSx7xWe65xhjubBWSU7aD3xA1Z694UBVMrqDw9xaHVskLPPymGBfTF3cfJeZ8fxukd",
+   "wallet": "HvtfqkQWELAPywvTawB763b653z3qiLvmroCKUuThasq",
+   "ts": "2026-11-14T06:36:37Z",
+   "tokens": 1095662.240286,
+   "wasted": 19573.7907,
+   "usd": 60.905151543068,
+   "price": 5.5587524424652956e-05
+  },
+  {
+   "tx": "3dkzGhPqzy2ACkNV5CEorvdbvYUreLyGFPUHyWrucYthQyGpz9G8PDiqPNVhqfdpzCZ9nqBRmYJ22FZu3FQJRq3V",
+   "wallet": "9ZU5MWCL3Yqv6YKAGdQoK5ZdTzY42CrABXbnQQAgU2vg",
+   "ts": "2026-11-14T05:38:21Z",
+   "tokens": 1966317.930209,
+   "wasted": 20946.764887,
+   "usd": 59.21864719545889,
+   "price": 3.011651690994067e-05
+  },
+  {
+   "tx": "b3kAgXgsBwoUKyYvgZ5UJ9BqVSSwUgRjqU53MzZ6dQCEY2yF7hCegWm1TjBCDyWfCEfqSby3JE6iWTHpaTbnRx5",
+   "wallet": "JmBbr7yKckJrcNChmbK9u8KHAnWsVTgmYbbuBQ2SkQM",
+   "ts": "2026-11-14T05:51:41Z",
+   "tokens": 1530177.15216,
+   "wasted": 19515.139167,
+   "usd": 58.53249269388212,
+   "price": 3.82521021250759e-05
+  },
+  {
+   "tx": "3k7w1v35x2NrQp5fbCFgHapHZC5RQAbfQEGptA75gboPA37WWyz8Pc3dm8JMdjNKoCuHeyw2jnW3v4jd2bvksA1f",
+   "wallet": "Cq1jaTmFxyT8wuVtUUtpgrArdqkFibunFRVmKpxbCPrV",
+   "ts": "2026-11-14T06:16:33Z",
+   "tokens": 1770946.240868,
+   "wasted": 18783.478354,
+   "usd": 58.358569460164276,
+   "price": 3.295332637063042e-05
+  },
+  {
+   "tx": "3HBSRDfXpt5kBoT74zSoFcdFTjf2Jc1zxJ5qWCLpHsG7PoGLcnBphTQDiQVbKHFmvZpmMuR5rtw5i4jMxaar2dLF",
+   "wallet": "6LkZgN5kFWFSzmV3gW2yku8ddSHvbV9p2nCuphSaUo85",
+   "ts": "2026-11-14T05:48:48Z",
+   "tokens": 864870.30122,
+   "wasted": 18043.570493,
+   "usd": 58.35113664473425,
+   "price": 6.74680776556013e-05
+  },
+  {
+   "tx": "3DrXNrrSe48pfQx19XByQbmeufcxu6eLnAuUFP59qvAzXjQXSZEBGZAH7LTwddGhL8L685o5spaXy3tbpezeSKkq",
+   "wallet": "Cq1jaTmFxyT8wuVtUUtpgrArdqkFibunFRVmKpxbCPrV",
+   "ts": "2026-11-14T06:21:39Z",
+   "tokens": 1812178.232342,
+   "wasted": 19230.712709,
+   "usd": 58.19929835615768,
+   "price": 3.211565910983426e-05
+  },
+  {
+   "tx": "95EM26MxSyQjnMpqfDepLajGcGBwW87ewLFN24HBdge4g7qyLXiqXTsCu6QPQVzgFaDnHBcagkywUDbtgittRW9",
+   "wallet": "DEZULr1C4LSntdEJqj24XQaE6UMZAwXpPbApY3GMQW67",
+   "ts": "2026-11-14T06:06:21Z",
+   "tokens": 2420041.383119,
+   "wasted": 20136.865145,
+   "usd": 55.8853695839382,
+   "price": 2.309273303083436e-05
+  },
+  {
+   "tx": "3cLkYeRMVoatqbGLyy6ei17FqrfEwAou3Ux2vBa9pJT7K14Wsx4oBANx2hAQMfVMRabiYFEtMC8jxnYBmbyVwkry",
+   "wallet": "4dXMKYj2qtxVmF1B2ADpQzDYL31a3QqScyhS3k2wdLPB",
+   "ts": "2026-11-14T05:45:10Z",
+   "tokens": 999999.980556,
+   "wasted": 18430.436661,
+   "usd": 54.91572088278934,
+   "price": 5.491572195057064e-05
+  },
+  {
+   "tx": "3rF1nRVaHi734A6hnaNQAjAV7eZf9nxchBfQ88SgbCtYWLhsRFDByXYnyx8F9rxJ8oqcC6pQJZz3ti3RSVy4pBMQ",
+   "wallet": "9HJ1anpgtqsCTUafanE2KJxNYSBMVkCmkWVmBpavFBdD",
+   "ts": "2026-11-14T05:47:57Z",
+   "tokens": 855010.923847,
+   "wasted": 17027.869469,
+   "usd": 54.15265921005714,
+   "price": 6.333563431728445e-05
+  },
+  {
+   "tx": "ej7m2AY4n9qeyHZWCxCq2ukY7cr8sbm4dq6dritS8ryTXSKnpMKTZffANqGg1BZ11HN5eezwpucDtbk1Bn1T2An",
+   "wallet": "68njY4gCRYyN1n2piszwi2x1JGF6oFxykEhKGDFNSV7o",
+   "ts": "2026-11-14T05:49:58Z",
+   "tokens": 843977.484711,
+   "wasted": 16326.172799,
+   "usd": 54.142170714105184,
+   "price": 6.415120272153336e-05
+  },
+  {
+   "tx": "3429Gg8ypH7B5yvmWkaysogXZLxv6VBhZmz4AB9qkdEYrLeV7FWz1CNeVg5HTPRECzD5tipZEtDUQvsrm1fUs1NE",
+   "wallet": "Be9mYSPfpMnR4xYCYaMdMmUw8FTpU1pgcf6ALEr5FWgT",
+   "ts": "2026-11-14T05:37:59Z",
+   "tokens": 1861056.48187,
+   "wasted": 19053.227098,
+   "usd": 53.820709605705694,
+   "price": 2.8919439108922877e-05
+  },
+  {
+   "tx": "5bNEFW7MfKsgJxctHLca7xcND6t2fTuEtNzmRU3kY6a9dQcAdyr1rmQ4mEYVUQ5wa2pb1YiR9DiwESHZ1EZa9cVs",
+   "wallet": "CzfuG744Uf565tdcePPfNKsUejtP8oE2yeq9BEw1r87G",
+   "ts": "2026-11-14T05:46:00Z",
+   "tokens": 900689.928485,
+   "wasted": 16585.187382,
+   "usd": 53.62817167416621,
+   "price": 5.95412138829743e-05
+  },
+  {
+   "tx": "4TM2UK7VgLNRXWctiKztRmtYYzDRFyy8aWz51PfkNY4FbK8C3U9f9nc1Jsg8LztD2dnAAfACDY9cKHfjHeybvrLu",
+   "wallet": "47Kn9ZCwWtMKbiUK6UaoonAVK26mW1asFbwKdHqNTub6",
+   "ts": "2026-11-14T05:38:39Z",
+   "tokens": 1776734.001985,
+   "wasted": 18754.851109,
+   "usd": 52.924457014216976,
+   "price": 2.9787496020838686e-05
+  },
+  {
+   "tx": "WYm26DrE5xJzpUGEyZscRFc5Yc8DHNXZDwjQzdLV2G5TQBmR6haLkBBSGMajEFQKdnriT5EXQx1XN5tWYBmFScm",
+   "wallet": "B2nvK7TdVchvmegeJ9PTB4MVjCYSEGkCoELVFRSbr4Tq",
+   "ts": "2026-11-14T06:44:43Z",
+   "tokens": 976442.777025,
+   "wasted": 16507.013349,
+   "usd": 51.675643147827266,
+   "price": 5.2922346668661164e-05
+  },
+  {
+   "tx": "46kiWRW6w2sgUKKF6q6axkKg4p4AfdFChd93C2RXhyabwj4qQHDDoFd2Jphe8ktJiPvzDPmccrVSFGVkBBguQvSs",
+   "wallet": "Cq1jaTmFxyT8wuVtUUtpgrArdqkFibunFRVmKpxbCPrV",
+   "ts": "2026-11-14T06:00:47Z",
+   "tokens": 1521053.647111,
+   "wasted": 16919.363881,
+   "usd": 51.60940089898704,
+   "price": 3.3930033300936426e-05
+  },
+  {
+   "tx": "4jiqUur75kqJ2uTFp4fdxmvqAhW36k2Dqsca5PMPtQtE3sqGBjwbxS8nW8mrHWrJPWwjGpExMWMYY14U84dtxUSE",
+   "wallet": "93owRBuCxFT9kypX9xZCvrdojXbLNqt6A6jJUsPTbsgY",
+   "ts": "2026-11-14T05:56:04Z",
+   "tokens": 1431513.393994,
+   "wasted": 16535.157015,
+   "usd": 51.1266230644118,
+   "price": 3.571508536274729e-05
+  },
+  {
+   "tx": "5tifiAAHJywzTdzNqvdHDuusZuHnnDTqm9cQpPiiKX2DukMiCk8UviwuSwfcxePuW95iz88dP9c8DB6s7L5henKP",
+   "wallet": "C5Aks9XD8vyKEimUyYtnjS8XwzMECzZBVnMYs4DJxc4V",
+   "ts": "2026-11-14T05:50:41Z",
+   "tokens": 800000.120356,
+   "wasted": 15459.780139,
+   "usd": 51.02844762237166,
+   "price": 6.378554993174752e-05
+  },
+  {
+   "tx": "3kGMYCxfKAaCPi3CdAnYWJtkSF3zTVFoqiBf4wk2zqkoohTCE7sf3BvQXGe7Ak9G2chiCg5AV95CR6BTVpRdTEhN",
+   "wallet": "9HJ1anpgtqsCTUafanE2KJxNYSBMVkCmkWVmBpavFBdD",
+   "ts": "2026-11-14T05:37:52Z",
+   "tokens": 1732558.531132,
+   "wasted": 17782.596275,
+   "usd": 50.29690963797803,
+   "price": 2.9030424504686484e-05
+  },
+  {
+   "tx": "5Yci6dyV97KWnf5yj9ZHybh2oR2kyyNguhJYHLgnR1tdDmMJfCBmU2FKF5kAzyMKiMaRxkQW3jVbjyYvaimrkBRg",
+   "wallet": "4tehHGHPF6GkzikAsTwRdtcidJAhVVnXpcK67vGVL44y",
+   "ts": "2026-11-14T05:24:14Z",
+   "tokens": 3267403.597228,
+   "wasted": 18748.170673,
+   "usd": 50.290791565200145,
+   "price": 1.539166805345561e-05
+  },
+  {
+   "tx": "299qQbc1KPTPK31yYahbiH7yvrh6SMjmrM68mtkYCH8wgThQQdVE7QhZjr9jTdnv1XnXpDn4uGXU9rRCxAtFswma",
+   "wallet": "91m87AWbW2zhWWP57nNmSreowRYUA4EQjQD2PdBuBp3d",
+   "ts": "2026-11-14T05:42:15Z",
+   "tokens": 1162223.100346,
+   "wasted": 17102.238792,
+   "usd": 50.19261606003434,
+   "price": 4.318673071038747e-05
+  },
+  {
+   "tx": "asmjcdhio1oR7h1iJeoW1NUPyctNHDTm2t4DePxnVDJrPYskyjhVAP7wTW6S1qBpHwaKJPQCCKhvNJpQwRfk3fH",
+   "wallet": "E17TvjJnocjNezKSfTXTsDfjEysq4vygpZXFZoRe6qkf",
+   "ts": "2026-11-14T05:45:43Z",
+   "tokens": 887933.082219,
+   "wasted": 15782.505741,
+   "usd": 50.18010433702858,
+   "price": 5.651338523351937e-05
+  },
+  {
+   "tx": "2CpyTMGRcrqYQTjYwKrNPJLtBbyMX3kq7RPDWTybiaRNJ2h7UoKs2uGZi2wKgNEEi6CXX6xKGzpsmogqGEsaNhh3",
+   "wallet": "CzfuG744Uf565tdcePPfNKsUejtP8oE2yeq9BEw1r87G",
+   "ts": "2026-11-14T06:54:13Z",
+   "tokens": 816793.269623,
+   "wasted": 14884.315378,
+   "usd": 49.95692317703653,
+   "price": 6.116226104568014e-05
+  },
+  {
+   "tx": "4dGTAKGEMnkBmVitCSihwXhWb7CvQVVkanZk2Qi1qUonU3PKsy1YWkNyFWg8LaGofibECgx12vpgBTSnES3NvbMU",
+   "wallet": "BrFj3nn9kPg83nfzpnqW6UmbvsKC4X1MDiNKa21o3jbW",
+   "ts": "2026-11-14T06:45:18Z",
+   "tokens": 832516.107656,
+   "wasted": 13644.686964,
+   "usd": 41.32254114964021,
+   "price": 4.9635725687021666e-05
+  },
+  {
+   "tx": "3WUpAjoMtXh21MonPZZAZv457osmxoPxMLynxGRgGmuTYTAmdnMttcXNAAD67XBXRiVeFb5nwpCceEgX2zL4kBco",
+   "wallet": "E17TvjJnocjNezKSfTXTsDfjEysq4vygpZXFZoRe6qkf",
+   "ts": "2026-11-14T06:53:46Z",
+   "tokens": 672437.024984,
+   "wasted": 12018.932895,
+   "usd": 40.14093254878733,
+   "price": 5.96947090320353e-05
+  },
+  {
+   "tx": "kqkcPK5ea4CNJ6rogb9Z68uJHqE3HWpE4ZLUETwUqE9kce8WN23zCiVsD1QA4kfYNjqC6idJKou8V8KdsUU21pi",
+   "wallet": "9FM2ue9kCBW4V3i7Be4FAti1xRgUA1YUsSqzutPMrWRL",
+   "ts": "2026-11-14T06:44:53Z",
+   "tokens": 768766.914645,
+   "wasted": 12888.923762,
+   "usd": 40.03805315159105,
+   "price": 5.2080874435237316e-05
+  },
+  {
+   "tx": "3druQfEtEPPTVKHY2vsX1FckCq6Y88qh5yS3cRZW75hfRNSKBHLEBvujuXtnQkT3WytVfY4y8xU9AitAccZHgQ35",
+   "wallet": "EDsyFfuk7opf61UBaSxRLex7znPmwBmiBgM9mtwWKnQ1",
+   "ts": "2026-11-14T06:46:22Z",
+   "tokens": 783628.251111,
+   "wasted": 12639.727277,
+   "usd": 39.4475011496635,
+   "price": 5.0339559725847364e-05
+  },
+  {
+   "tx": "eftDvFUk1p2xjQE72ceDGjWsHxSfUb6ESV1Z9amRF8RXmJuLcpgNMRVciBgF1iek3N5Q7LLGUQYbj4r2dtFcC4L",
+   "wallet": "3PhtbpkmM6hiuS9pMxsrvt3VGHZpZ1fUtz91XckUyNEh",
+   "ts": "2026-11-14T06:44:55Z",
+   "tokens": 734693.951479,
+   "wasted": 12249.54164,
+   "usd": 37.98298816745686,
+   "price": 5.1699062025750924e-05
+  },
+  {
+   "tx": "4TsbHJUfGmzZJy2qAr4BT3FGsaiMmugK2NxkHfAn3N33nAcZWh1Joj6siRuDmbBsGoymzNQqBZecj2SVgYDQShdZ",
+   "wallet": "GU8abgQZGBZYpW8bYSCTHdWrkBVmZA1sKbpWaSUSjcmE",
+   "ts": "2026-11-14T06:53:38Z",
+   "tokens": 627586.151157,
+   "wasted": 11204.583803,
+   "usd": 37.628980239144326,
+   "price": 5.9958270541458896e-05
+  },
+  {
+   "tx": "UHJqVrBA74Ft1VGwVZoZojjiLx12adpuwbLJSTK9sQwA2a26zbE9g1tSQ3ySiQBZXiFSjSzQXVStLHeNSa7VeS9",
+   "wallet": "EXJ7nrocEPmGTRWwh9kxQGdTQGQ3XBboZZWXvxXULwV8",
+   "ts": "2026-11-14T06:59:56Z",
+   "tokens": 491323.617539,
+   "wasted": 10481.985486,
+   "usd": 36.81364716312456,
+   "price": 7.492749350727554e-05
+  },
+  {
+   "tx": "2BHfubzP3QFHQwtxFkQ1N7yWcnY17UDZBML2ftKtZU7GnqEqznjmoy9EDUtGaDj5iCx9xb5m9WnBHdU7uAdKWSr1",
+   "wallet": "6wdPCWCKtEDafX2k71p6RbuAQcDT1Py6nxS9tnutJb2a",
+   "ts": "2026-11-14T06:55:19Z",
+   "tokens": 543007.553247,
+   "wasted": 10097.673221,
+   "usd": 35.468046388457694,
+   "price": 6.531777721390959e-05
+  },
+  {
+   "tx": "61QD7t9e4g46HZCvMYxxH4H9J2euH7EYrRKUwiCAhLaqNxEKCW7QW8Zat1D6woqxfL6WGBDdSWVkd4Ye3fvvMC2u",
+   "wallet": "HBU13fYoGQE77KtMeeWciUy6YvAKCrSNYJ6K1EtA3KYL",
+   "ts": "2026-11-14T06:59:57Z",
+   "tokens": 458273.868247,
+   "wasted": 9744.80173,
+   "usd": 34.21088052603276,
+   "price": 7.465160659693958e-05
+  },
+  {
+   "tx": "3YJmZbLf4uAQcVVwLYrPjJ71zW6ee5PCtpRp2vMjCX97zkNDBFd1EqCDkX5pe64xMxWKGGy6LsuZvMgQJvXL1tvf",
+   "wallet": "3Tu4b6CwBPBZyNeyP1FPRDbhDuniwCp4Yup7iPw8PqJR",
+   "ts": "2026-11-14T06:45:35Z",
+   "tokens": 694839.343515,
+   "wasted": 11063.864345,
+   "usd": 33.36543806366202,
+   "price": 4.801892462633952e-05
+  },
+  {
+   "tx": "daEyWyeB3oW71QZXsfJc6KbkuHFig9GkHL7HE4z4wN8rCTfo4NUQmL6Bb5tMkMnLXkP1x459YeMTQqQ9ftVZMmT",
+   "wallet": "HoS1GRo7Zt7Cc9BgkJRg3RwEBLFbU6ohvC5yfDW5ja3k",
+   "ts": "2026-11-14T06:55:02Z",
+   "tokens": 455746.755042,
+   "wasted": 8410.326423,
+   "usd": 29.40426388015872,
+   "price": 6.45188661353144e-05
+  },
+  {
+   "tx": "3y1WZq5sxrqS44yK8wrG9ejz1kkkdhxvFuNYs1F4LDpoan2uq7WCHjE9jjF9X1Z7nXrfJYjVxnEgK8oZVoEGRLv6",
+   "wallet": "8hyPBA2CzU5Yz9vPm3m4QkvdinHzBzTUcvpjoYKwLLUT",
+   "ts": "2026-11-14T06:48:11Z",
+   "tokens": 534917.483806,
+   "wasted": 8897.293664,
+   "usd": 28.826682144711125,
+   "price": 5.3889960633939154e-05
+  },
+  {
+   "tx": "3brz5GtwSBDqWYeuSSYiN7DPDAiJbfzNsFFDCeQP7zBdsMVkBnztKLP1RzJQGFQMhkQSvamFDRuyDW81nBeghe9u",
+   "wallet": "9AdCq2Dab4NwJrYWQ71tyGMqGYk4xQhgMAJPVbHzoTdT",
+   "ts": "2026-11-14T07:00:28Z",
+   "tokens": 323126.833744,
+   "wasted": 7148.228886,
+   "usd": 25.137692479182434,
+   "price": 7.779512517706278e-05
+  },
+  {
+   "tx": "3vfPYvaJ1QyNZB7AtwyxqZH4uoftTpFfDU7LKqdg82JsarLpRc4oorZMzEKdxHLR4NHXwVdf45JHB8QjnH4e1QmV",
+   "wallet": "3VBnRtZB65sBmWKYHjg6szBSLbNNBcgV5zHXmvuUPVSV",
+   "ts": "2026-11-14T06:56:06Z",
+   "tokens": 310907.632052,
+   "wasted": 5789.433445,
+   "usd": 20.022525742136942,
+   "price": 6.440023877827525e-05
+  },
+  {
+   "tx": "2dDNTX2Q4qH13Wsvp7B1GytZQ5yZRNXS8TgFF5fYCo8LnFK6H84EEPnzQUteK7Sg5HHn2zf21xcr98upVGEsKtqh",
+   "wallet": "B6dmwr8LNBBK7kUDinQYkLpxnBXeVAb3REKoU2s2WyA6",
+   "ts": "2026-11-14T06:58:50Z",
+   "tokens": 289318.365929,
+   "wasted": 5682.616084,
+   "usd": 19.838066924208125,
+   "price": 6.856829451703897e-05
+  },
+  {
+   "tx": "bBgaLgTyKxFfk3PSW74skZhCxGv8fEnXFHv2ouCu4qfSczKkWJZvrNhTXj5J3Kn2D1RTTuBMT8LVZvwSKZ5sxw1",
+   "wallet": "3PhtbpkmM6hiuS9pMxsrvt3VGHZpZ1fUtz91XckUyNEh",
+   "ts": "2026-11-14T06:45:04Z",
+   "tokens": 367346.97574,
+   "wasted": 6094.142626,
+   "usd": 18.515275642927442,
+   "price": 5.040268973394826e-05
+  },
+  {
+   "tx": "2q1vTJsEU3yTodZSGRYxx2thYa7x1kRWjCETXaJXno6m6p46ovSFviUpK4bprgkp78EpXPsco3C3g44o2BGZKZnd",
+   "wallet": "C9jRCZHHbYJMtDnukBVs1VpeWHa5CGEiewR8jxVGghSa",
+   "ts": "2026-11-14T06:55:24Z",
+   "tokens": 251721.218516,
+   "wasted": 4694.024099,
+   "usd": 16.487363049385287,
+   "price": 6.549850325127563e-05
+  },
+  {
+   "tx": "4CaAPNzHkXaBr4umJyackNjXS2oPFxzGxLTGHoHajwm4G4BQxZ7PNdH657qRsQFbZL5kbQNXYN1Pvd4ZXyGrza16",
+   "wallet": "74YaTZ5ouTzRFSp7AZCE95nXjdmLU2Z7oPQNKXy4whEF",
+   "ts": "2026-11-14T06:51:26Z",
+   "tokens": 182345.490277,
+   "wasted": 3278.49868,
+   "usd": 11.036159854797274,
+   "price": 6.052334959330393e-05
+  },
+  {
+   "tx": "3opEMV15xQSjHToe7Cv3bLPVJkqzTkCxfjAqzAb31SnqE2BbgTqBJaPPMKPomt69rYYt2r7Pe81ZsyzLfJeCSbnW",
+   "wallet": "FYNbAtfjUy32U3Fpu6ZKpssZhFCifEkUSpCdVq5oQ6yC",
+   "ts": "2026-11-14T06:46:58Z",
+   "tokens": 195312.129856,
+   "wasted": 3224.95721,
+   "usd": 10.46093791021092,
+   "price": 5.356010360402896e-05
+  }
+ ]
+}

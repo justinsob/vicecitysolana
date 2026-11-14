@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>$VICECITY · Wasted in Vice City</title>
+<meta name="description" content="$VICECITY is a Solana meme coin that trades against $WASTED instead of SOL. Live market data, contract and links. Not affiliated with Rockstar Games.">
+<meta name="theme-color" content="#0b0618">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="$VICECITY · Wasted in Vice City">
+<meta property="og:description" content="The Solana meme coin that runs on $WASTED. Live market data, contract and links.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vicecitysolana.cc/">
+<meta property="og:image" content="https://vicecitysolana.cc/og.jpg">
+<link rel="canonical" href="https://vicecitysolana.cc/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vicecitysolana.cc/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd166'/%3E%3Cstop offset='1' stop-color='%23ff3ea5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230b0618'/%3E%3Ccircle cx='32' cy='32' r='20' fill='url(%23g)'/%3E%3Cpath d='M10 38h44M12 44h40M16 50h32' stroke='%230b0618' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Mr+Dafoe&display=swap" rel="stylesheet">
+<script>(function(){try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var d=document.documentElement,c=document.createElement('canvas');if(new URLSearchParams(location.search).get('bg')==='3d'){if(c.getContext('webgl2')||c.getContext('webgl'))d.classList.add('has3d')}else d.classList.add('has3d','reel')}catch(e){}})()</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<style>
+:root{
+  --bg:#0b0618; --bg2:#120a26; --panel:#170d2e; --line:#2c1c4d;
+  --text:#f6f1ff; --mute:#a99cc4;
+  --pink:#ff3ea5; --cyan:#2ee6e6; --sun:#ffd166; --orange:#ff7a3d;
+  --up:#3ddc97; --down:#ff4d6d; --wasted:#e10600;
+  --r:6px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#000;padding:8px 12px;z-index:99}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,6,24,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:58px}
+.brand{font-family:"Mr Dafoe",cursive;font-size:28px;color:var(--pink);text-shadow:0 0 14px rgba(255,62,165,.7);line-height:1}
+.brand:hover{text-decoration:none}
+nav ul{display:flex;gap:18px;list-style:none;margin:0 0 0 auto;padding:0;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+nav ul a{color:var(--mute)}nav ul a:hover{color:var(--text);text-decoration:none}
+@media(max-width:760px){nav ul{display:none}nav .btn{margin-left:auto}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--r);border:1px solid var(--line);background:#150b2b;color:var(--text);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:transform .12s,box-shadow .12s}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(180deg,#ff5cb4,#e0238a);border-color:#ff8ccb;box-shadow:0 6px 24px rgba(255,62,165,.4)}
+.btn.cyan{border-color:var(--cyan);color:var(--cyan)}
+.btn.wasted{border-color:#7a1512;box-shadow:inset 3px 0 0 var(--wasted)}
+.btn.sm{padding:8px 14px;font-size:12px}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 85px);min-height:calc(100svh - 85px);display:grid;place-items:center;text-align:center;overflow:hidden;
+  background:linear-gradient(180deg,#1a0b3a 0%,#4a1263 32%,#b02a7c 56%,#ff7a3d 74%,#ffd166 82%,#0b0618 82.2%)}
+.sun{position:absolute;left:50%;top:44%;width:min(520px,78vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:linear-gradient(180deg,#ffe38a 0%,#ff9d4d 45%,#ff3ea5 100%);
+  -webkit-mask:repeating-linear-gradient(180deg,#000 0 7%,#000 7% 100%),linear-gradient(#000,#000);
+  mask:linear-gradient(180deg,#000 0 52%,transparent 52% 54%,#000 54% 62%,transparent 62% 65%,#000 65% 72%,transparent 72% 76%,#000 76% 82%,transparent 82% 87%,#000 87% 92%,transparent 92% 100%);
+  filter:drop-shadow(0 0 60px rgba(255,120,80,.55))}
+.skyline{position:absolute;left:0;right:0;bottom:18%;width:100%;height:auto;display:block}
+.grid{position:absolute;left:-50%;right:-50%;bottom:0;height:18%;
+  background:
+   linear-gradient(180deg,rgba(11,6,24,0) 0,var(--bg) 95%),
+   repeating-linear-gradient(90deg,rgba(255,62,165,.55) 0 2px,transparent 2px 80px),
+   repeating-linear-gradient(180deg,rgba(255,62,165,.55) 0 2px,transparent 2px 34px),
+   #170628;
+  transform:perspective(320px) rotateX(58deg);transform-origin:top center}
+.hero-in{position:relative;z-index:2;padding:64px 20px 110px;max-width:900px}
+.kicker{display:inline-flex;gap:10px;align-items:center;padding:6px 14px;border:1px solid rgba(255,255,255,.25);border-radius:99px;background:rgba(11,6,24,.55);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--up);box-shadow:0 0 10px var(--up);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.pre{font-family:Anton,Impact,sans-serif;font-size:clamp(22px,4vw,40px);letter-spacing:.32em;margin:26px 0 0;color:#fff;text-shadow:0 2px 0 #000,0 0 18px rgba(0,0,0,.6)}
+.pre b{color:#ff3b30;font-weight:400}
+h1{font-family:"Mr Dafoe",cursive;font-weight:400;font-size:clamp(84px,17vw,210px);line-height:.9;margin:0;color:#ff5cb4;transform:rotate(-5deg);
+  text-shadow:0 0 6px #fff,0 0 22px #ff3ea5,0 0 60px #ff3ea5,5px 6px 0 #2a0a4a}
+.tag{font-size:clamp(16px,2.2vw,20px);max-width:640px;margin:34px auto 22px;padding:12px 18px;background:rgba(11,6,24,.72);border:1px solid rgba(255,255,255,.14);border-radius:10px;backdrop-filter:blur(6px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero .btn:not(.primary){background:rgba(11,6,24,.78)}
+
+/* sections */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(38px,6vw,60px);line-height:1.05;margin:6px 0 10px;text-transform:uppercase;letter-spacing:.01em}
+h2 em{font-style:normal;color:var(--pink)}
+.lede{color:var(--mute);max-width:640px;margin:0 0 30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.card .k{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.card .v{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:24px;margin:4px 0 2px}
+.card .s{font-size:12px;color:var(--mute)}
+.up{color:var(--up)}.down{color:var(--down)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;font-size:13px}
+.chip{padding:5px 12px;border:1px solid var(--line);border-radius:99px;background:var(--panel);font-family:"JetBrains Mono",monospace}
+.chart{margin-top:16px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#000;height:520px}
+.chart iframe{width:100%;height:100%;border:0;display:block}
+.src{font-size:12px;color:var(--mute);margin-top:12px}
+
+/* trades */
+#tradesBox{margin-top:16px;display:none}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid rgba(44,28,77,.5);font-family:"JetBrains Mono",monospace}
+.tscroll{max-height:360px;overflow:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+
+/* connection */
+.link-sec{background:radial-gradient(900px 400px at 85% 0,rgba(225,6,0,.16),transparent 70%),var(--bg2)}
+.duo{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:8px 0 26px}
+@media(max-width:820px){.duo{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}}
+.coin{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
+.coin.vc{border-color:rgba(255,62,165,.6);box-shadow:0 0 34px rgba(255,62,165,.14)}
+.coin.ws{border-color:rgba(225,6,0,.6);box-shadow:0 0 34px rgba(225,6,0,.14)}
+.coin .role{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.coin h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:38px;margin:2px 0 8px;letter-spacing:.02em}
+.coin.vc h3{color:var(--pink)}.coin.ws h3{color:#ff3b30}
+.coin p{margin:0 0 14px;color:var(--mute);font-size:14px}
+.coin dl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
+.coin dt{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.coin dd{margin:0;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:18px}
+.arrow{align-self:center;text-align:center;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute);letter-spacing:.1em}
+.arrow svg{display:block;margin:0 auto 6px}
+.points{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.points li{background:rgba(23,13,46,.7);border:1px solid var(--line);border-left:3px solid var(--pink);border-radius:var(--r);padding:14px 16px;font-size:14px;color:var(--mute)}
+.points b{display:block;color:var(--text);font-size:15px;margin-bottom:2px}
+
+/* CA */
+.ca{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--panel);border:1px dashed var(--pink);border-radius:var(--r);padding:16px;margin:20px 0 14px}
+.ca code{font-family:"JetBrains Mono",monospace;font-size:clamp(12px,1.9vw,16px);word-break:break-all;flex:1;min-width:220px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+
+/* countdown */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:560px;margin:10px 0 18px}
+.count div{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 8px;text-align:center}
+.count b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(36px,7vw,58px);line-height:1;color:var(--sun)}
+.count span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;counter-reset:s;margin-bottom:22px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;counter-increment:s}
+.step::before{content:counter(s);font-family:Anton,Impact,sans-serif;font-size:44px;line-height:1;color:var(--cyan)}
+.step h3{margin:8px 0 4px;font-size:17px}
+.step p{margin:0;color:var(--mute);font-size:14px}
+
+details{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);margin-bottom:10px}
+summary{cursor:pointer;padding:16px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--pink);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 18px 16px;color:var(--mute)}
+
+footer{border-top:1px solid var(--line);padding:36px 0 60px;font-size:13px;color:var(--mute)}
+footer p{max-width:820px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--pink);color:#fff;font-weight:700;padding:10px 18px;border-radius:99px;opacity:0;pointer-events:none;transition:.25s;z-index:99;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---- 3D city + motion ---- */
+#city{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:none}
+.has3d #city{display:block}
+header.hero,main,footer{position:relative;z-index:1}
+.has3d .hero{background:none}
+.has3d .sun,.has3d .skyline,.has3d .grid{display:none}
+.has3d section{padding:0;border:0;margin:78vh 0}
+.has3d section>.wrap{background:rgba(11,6,24,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,62,165,.28);border-radius:18px;padding:44px 36px;box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.has3d .link-sec{background:none}
+.has3d .link-sec>.wrap{background:radial-gradient(900px 400px at 85% 0,rgba(225,6,0,.2),transparent 70%),rgba(18,10,38,.82)}
+.has3d footer{background:rgba(11,6,24,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@media(max-width:700px){.has3d section>.wrap{padding:28px 18px;border-radius:14px;margin:0 10px}}
+
+.ticker{overflow:hidden;border-top:1px solid var(--line);background:rgba(8,4,18,.7);height:26px;font:700 11px/26px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.ticker-in{display:inline-block;animation:marq 38s linear infinite}
+.ticker-in span{margin:0 22px}.ticker-in b{color:var(--text)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+h1{animation:flick 7s infinite}
+@keyframes flick{0%,100%,41%,43.5%,46%,71%{opacity:1}42%,45%{opacity:.55}70%{opacity:.8}}
+.scrollhint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px #000;display:none}
+.has3d .scrollhint{display:block}
+.scrollhint span{display:block;font-size:20px;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+.loc{position:fixed;right:28px;bottom:24px;z-index:40;font-family:"Mr Dafoe",cursive;font-size:clamp(34px,5vw,62px);line-height:1;color:#fff;text-shadow:0 0 8px #ff3ea5,0 0 30px #ff3ea5,3px 4px 0 #2a0a4a;opacity:0;transform:translateX(40px) rotate(-4deg);transition:opacity .5s,transform .7s cubic-bezier(.2,.9,.2,1);pointer-events:none}
+.loc.on{opacity:1;transform:translateX(0) rotate(-4deg)}
+.rail{position:fixed;left:14px;top:50%;height:36vh;width:3px;margin-top:-18vh;background:rgba(255,255,255,.14);border-radius:3px;z-index:40;display:none}
+.has3d .rail{display:block}
+.rail i{position:absolute;inset:0;background:linear-gradient(var(--cyan),var(--pink));border-radius:3px;transform-origin:top;transform:scaleY(0);box-shadow:0 0 12px var(--pink)}
+@media(max-width:700px){.rail{left:5px}.loc{right:14px;bottom:14px}}
+
+/* cinematic overlays */
+.has3d #live{margin-top:130vh}
+#reel{position:fixed;inset:0;z-index:0;overflow:hidden;background:#0b0618;display:none}
+.reel #reel{display:block}
+.reel #city{display:none}
+#reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform,opacity;background-size:cover;background-position:center}
+#reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,6,24,.35),rgba(11,6,24,.05) 30%,rgba(11,6,24,.25))}
+.reel section>.wrap{background:rgba(11,6,24,.74)}
+.clip{position:relative;width:min(1200px,94vw);margin:60px auto;aspect-ratio:21/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(255,62,165,.5);box-shadow:0 0 0 1px #000,0 40px 120px rgba(0,0,0,.7),0 0 70px rgba(255,62,165,.25)}
+.has3d .clip{margin:150vh auto 0}
+.has3d .clip+section{margin-top:78vh}
+.clip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.clip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 22%,transparent 62%,rgba(0,0,0,.7));pointer-events:none}
+.clip-cap{position:absolute;left:28px;bottom:20px;z-index:2;font-family:"Mr Dafoe",cursive;font-size:clamp(30px,5vw,64px);line-height:1;color:#fff;transform:rotate(-4deg);text-shadow:0 0 8px #ff3ea5,0 0 30px #ff3ea5,3px 4px 0 #2a0a4a}
+.clip-tag{position:absolute;right:18px;top:14px;z-index:2;font:700 10px/1 "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:8px}
+.clip-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff3b30;animation:pulse 1.2s infinite}
+.js .clip.reveal{transform:scale(.86);opacity:0}
+.js .clip.reveal.in{transform:none;opacity:1}
+@media(max-width:700px){.clip{aspect-ratio:16/9}.clip-cap{left:14px;bottom:12px}}
+.fx{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%);overflow:hidden}
+.has3d .fx{display:block}
+.fx::after{content:"";position:absolute;inset:-100%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .6s steps(4) infinite}
+@keyframes grain{25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-4%)}75%{transform:translate(-2%,-2%)}}
+.bars i{position:fixed;left:0;right:0;height:9vh;background:#000;z-index:30;pointer-events:none;transition:transform .8s cubic-bezier(.2,.9,.2,1)}
+.bars i:first-child{top:84px;transform:translateY(-101%)}
+.bars i:last-child{bottom:0;transform:translateY(101%)}
+.cine .bars i{transform:none}
+.cine .loc{bottom:calc(9vh + 18px)}
+
+.stamp{position:fixed;inset:0;z-index:60;display:grid;place-items:center;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,rgba(120,0,0,.25),rgba(60,0,0,.75))}
+.stamp span{font-family:Anton,Impact,sans-serif;font-size:clamp(70px,17vw,230px);letter-spacing:.04em;color:#ff2a2a;text-shadow:0 0 30px rgba(255,0,0,.8),6px 6px 0 #000;transform:scale(2.2);opacity:0}
+.stamp.go{animation:stampBg 1.7s ease-out}
+.stamp.go span{animation:stampTx 1.7s cubic-bezier(.2,.9,.2,1)}
+@keyframes stampBg{0%{opacity:0}12%,60%{opacity:1}100%{opacity:0}}
+@keyframes stampTx{0%{transform:scale(2.2);opacity:0}18%{transform:scale(1);opacity:1}70%{transform:scale(1.04);opacity:1}100%{transform:scale(1.1);opacity:0}}
+
+/* hall of fumblers */
+.has3d .fum-sec>.wrap{border-color:rgba(255,42,42,.45);background:radial-gradient(700px 320px at 15% 0,rgba(255,42,42,.2),transparent 70%),rgba(16,6,22,.86)}
+.fum-sec h2 em{color:#ff3b30}
+.fum-total{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:4px 0 6px}
+.fum-total b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(54px,10vw,104px);line-height:1;color:#ff3b30;text-shadow:0 0 30px rgba(255,42,42,.45)}
+.fum-total span{color:var(--mute);font-size:14px;max-width:340px}
+.fum-tick{overflow:hidden;white-space:nowrap;border-block:1px solid rgba(255,42,42,.3);margin:14px 0 20px;font:700 12px/34px "JetBrains Mono",monospace;letter-spacing:.06em;color:var(--mute)}
+.fum-tick div{display:inline-block;animation:marq 40s linear infinite}
+.fum-tick span{margin:0 18px}.fum-tick b{color:#ff6b62}
+.podium{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:16px}
+.fum-card{position:relative;background:rgba(23,13,46,.85);border:1px solid rgba(255,42,42,.35);border-radius:10px;padding:18px;overflow:hidden}
+.fum-card:first-child{border-color:#ff3b30;box-shadow:0 0 34px rgba(255,42,42,.22)}
+.fum-card .rk{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.fum-card .big{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:30px;color:#ff6b62;margin:4px 0}
+.fum-card .big.dodge{color:var(--up)}
+.fum-card p{margin:0;font-size:13px;color:var(--mute)}
+.fum-card .w{font-family:"JetBrains Mono",monospace;color:var(--text);font-size:13px;margin-top:8px;display:flex;justify-content:space-between;gap:8px}
+.tier{display:inline-block;padding:2px 9px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1px solid currentColor;color:#ff6b62}
+.tier.t0{color:var(--up)}.tier.t1{color:var(--mute)}.tier.t2{color:var(--sun)}.tier.t3{color:var(--orange)}
+.fum-table td,.fum-table th{white-space:nowrap}
+.fum-table td.neg{color:#ff6b62}.fum-table td.pos{color:var(--up)}
+.fum-empty{padding:18px;border:1px dashed var(--line);border-radius:var(--r);color:var(--mute)}
+
+.js .reveal{opacity:0;transform:translateY(60px) scale(.97);transition:opacity .8s,transform .9s cubic-bezier(.2,.9,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal .card,.js .reveal .step,.js .reveal .coin,.js .reveal .points li{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.js .reveal.in .card,.js .reveal.in .step,.js .reveal.in .coin,.js .reveal.in .points li{opacity:1;transform:none}
+.reveal.in :is(.card,.step,.coin,li):nth-child(2){transition-delay:.08s}
+.reveal.in :is(.card,.step,.coin,li):nth-child(3){transition-delay:.16s}
+.reveal.in :is(.card,.step,.coin,li):nth-child(4){transition-delay:.24s}
+.reveal.in :is(.card,.step,.coin,li):nth-child(5){transition-delay:.32s}
+.reveal.in :is(.card,.step,.coin,li):nth-child(6){transition-delay:.40s}
+.flash{animation:flash .9s}
+@keyframes flash{0%{color:var(--sun);text-shadow:0 0 16px var(--sun)}}
+.card{transition:border-color .2s,transform .2s,box-shadow .2s}
+.card:hover{border-color:var(--pink);transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,62,165,.18)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="city" aria-hidden="true"></canvas>
+<div id="reel" aria-hidden="true">
+  <video data-src="media/walk.mp4" data-src-mobile="media/walk-mobile.mp4" poster="media/walk-poster.jpg" muted playsinline></video>
+</div>
+<div class="rail" aria-hidden="true"><i id="railFill"></i></div>
+<div class="loc" id="loc" aria-hidden="true"></div>
+<div class="fx" aria-hidden="true"></div>
+<div class="bars" aria-hidden="true"><i></i><i></i></div>
+<div class="stamp" id="stamp" aria-hidden="true"><span>FUMBLED</span></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Vice City</a>
+    <ul>
+      <li><a href="#live">Live</a></li>
+      <li><a href="#wasted">$WASTED link</a></li>
+      <li><a href="#fumblers">Fumblers</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#buy">How to buy</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn primary sm" data-href="pump" target="_blank" rel="noopener">Buy</a>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-in" id="ticker"></div></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="sun" aria-hidden="true"></div>
+  <svg class="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g fill="#1b0a36">
+      <path d="M0 260V170h60v-40h50v60h40V90h70v100h30v-50h60v70h50V60h30v-30h20v30h30v150h40v-90h70v60h40V110h80v110h50v-60h60v50h40V40h90v170h40v-70h70v50h50V100h60v110h40v-80h80v70h50V70h70v140h40v-50h60v100z"/>
+    </g>
+    <g fill="#0b0618">
+      <!-- palms -->
+      <g transform="translate(150 60)"><rect x="-4" y="40" width="8" height="200"/><path d="M0 44c-30-40-70-34-92-12 30-10 60-6 92 12zM0 44c30-40 70-34 92-12-30-10-60-6-92 12zM0 44c-10-44-44-58-70-52 28 6 52 22 70 52zM0 44c10-44 44-58 70-52-28 6-52 22-70 52zM0 44c-36-8-66 14-76 44 20-24 44-38 76-44zM0 44c36-8 66 14 76 44-20-24-44-38-76-44z"/></g>
+      <g transform="translate(1270 40) scale(1.15)"><rect x="-4" y="40" width="8" height="200"/><path d="M0 44c-30-40-70-34-92-12 30-10 60-6 92 12zM0 44c30-40 70-34 92-12-30-10-60-6-92 12zM0 44c-10-44-44-58-70-52 28 6 52 22 70 52zM0 44c10-44 44-58 70-52-28 6-52 22-70 52zM0 44c-36-8-66 14-76 44 20-24 44-38 76-44zM0 44c36-8 66 14 76 44-20-24-44-38-76-44z"/></g>
+      <g transform="translate(330 110) scale(.7)"><rect x="-4" y="40" width="8" height="200"/><path d="M0 44c-30-40-70-34-92-12 30-10 60-6 92 12zM0 44c30-40 70-34 92-12-30-10-60-6-92 12zM0 44c-10-44-44-58-70-52 28 6 52 22 70 52zM0 44c10-44 44-58 70-52-28 6-52 22-70 52z"/></g>
+      <g transform="translate(1090 120) scale(.65)"><rect x="-4" y="40" width="8" height="200"/><path d="M0 44c-30-40-70-34-92-12 30-10 60-6 92 12zM0 44c30-40 70-34 92-12-30-10-60-6-92 12zM0 44c-10-44-44-58-70-52 28 6 52 22 70 52zM0 44c10-44 44-58 70-52-28 6-52 22-70 52z"/></g>
+    </g>
+  </svg>
+  <div class="grid" aria-hidden="true"></div>
+
+  <div class="hero-in">
+    <span class="kicker"><span class="dot"></span><span id="heroChip">Live on Solana · paired with $WASTED</span></span>
+    <p class="pre"><b>WASTED</b> IN</p>
+    <h1>Vice City</h1>
+    <p class="tag">The Solana meme coin that doesn't trade against SOL. It trades against <strong>$WASTED</strong>. Every ticket into the city goes through the parent coin.</p>
+    <div class="cta">
+      <a class="btn primary" data-href="pump" target="_blank" rel="noopener">Buy $VICECITY</a>
+      <button class="btn" data-copy>Copy contract</button>
+      <a class="btn cyan" data-href="dex" target="_blank" rel="noopener">↗ Dex chart</a>
+      <a class="btn wasted" href="https://wastedonsolana.cc/" target="_blank" rel="noopener">↗ $WASTED</a>
+    </div>
+  </div>
+  <div class="scrollhint" aria-hidden="true">Scroll to walk<span>↓</span></div>
+</header>
+
+<main id="main">
+
+<section id="live">
+  <div class="wrap reveal">
+    <div class="eyebrow">On-chain · Live</div>
+    <h2>Live from <em>the city</em></h2>
+    <p class="lede">Straight from the PumpSwap VICECITY/WASTED pool. Refreshes every 20 seconds.</p>
+    <div class="chips">
+      <span class="chip">1h <b id="c1h">–</b></span>
+      <span class="chip">6h <b id="c6h">–</b></span>
+      <span class="chip">24h <b id="c24h">–</b></span>
+      <span class="chip" id="updated">Loading…</span>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="k">Price</div><div class="v" id="price">–</div><div class="s" id="priceW">– WASTED</div></div>
+      <div class="card"><div class="k">Market cap</div><div class="v" id="mc">–</div><div class="s">PumpSwap · WASTED pair</div></div>
+      <div class="card"><div class="k">Liquidity</div><div class="v" id="liq">–</div><div class="s" id="liqW">– WASTED in pool</div></div>
+      <div class="card"><div class="k">24h volume</div><div class="v" id="vol">–</div><div class="s" id="vol1h">Last hour –</div></div>
+      <div class="card"><div class="k">24h buys / sells</div><div class="v" id="txns">–</div><div class="s" id="txnsS">–</div></div>
+    </div>
+    <div class="chart"><iframe id="chartFrame" title="VICECITY/WASTED chart on DexScreener" loading="lazy"></iframe></div>
+
+    <div id="tradesBox">
+      <h3 style="margin:26px 0 10px">Live trades</h3>
+      <div class="tscroll"><table>
+        <thead><tr><th>Side</th><th>$VICECITY</th><th>USD</th><th>Wallet</th><th>Age</th></tr></thead>
+        <tbody id="trades"></tbody>
+      </table></div>
+    </div>
+    <p class="src">Price, change, liquidity, volume and trade counts: <a data-href="dex" target="_blank" rel="noopener">DexScreener API</a>. Chart: DexScreener. Trades: GeckoTerminal public API when available.</p>
+  </div>
+</section>
+
+<section id="wasted" class="link-sec">
+  <div class="wrap reveal">
+    <div class="eyebrow">The connection</div>
+    <h2>The city runs on <em style="color:#ff3b30">$WASTED</em></h2>
+    <p class="lede">Most pump.fun coins pair with SOL. $VICECITY is paired with $WASTED. That link is on-chain, in the pool itself, and anyone can check it.</p>
+
+    <div class="duo">
+      <div class="coin ws">
+        <div class="role">Parent coin · the currency</div>
+        <h3>$WASTED</h3>
+        <p>The community-takeover coin. The dev ran, the community respawned. It's the quote token in the Vice City pool.</p>
+        <dl>
+          <div><dt>Price</dt><dd id="wPrice">–</dd></div>
+          <div><dt>Market cap</dt><dd id="wMc">–</dd></div>
+          <div><dt>24h</dt><dd id="w24">–</dd></div>
+          <div><dt>Liquidity</dt><dd id="wLiq">–</dd></div>
+        </dl>
+        <div class="links">
+          <a class="btn wasted sm" href="https://wastedonsolana.cc/" target="_blank" rel="noopener">↗ Wasted site</a>
+          <a class="btn sm" href="https://pump.fun/coin/GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump" target="_blank" rel="noopener">↗ pump.fun</a>
+        </div>
+      </div>
+      <div class="arrow" aria-hidden="true">
+        <svg width="64" height="24" viewBox="0 0 64 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h58M50 3l10 9-10 9"/></svg>
+        PAIRED
+      </div>
+      <div class="coin vc">
+        <div class="role">This coin · the city</div>
+        <h3>$VICECITY</h3>
+        <p>Launched Nov 13, 2026 on pump.fun with one line of lore: "Wasted in Vice City." Graduated to PumpSwap the next day.</p>
+        <dl>
+          <div><dt>Price</dt><dd id="vPrice">–</dd></div>
+          <div><dt>Market cap</dt><dd id="vMc">–</dd></div>
+          <div><dt>Price in WASTED</dt><dd id="vW">–</dd></div>
+          <div><dt>WASTED in pool</dt><dd id="vPool">–</dd></div>
+        </dl>
+        <div class="links">
+          <a class="btn primary sm" data-href="pump" target="_blank" rel="noopener">Buy $VICECITY</a>
+          <a class="btn sm" data-href="solscanPool" target="_blank" rel="noopener">↗ Verify pool</a>
+        </div>
+      </div>
+    </div>
+
+    <ul class="points">
+      <li><b>Priced in $WASTED</b>The pool holds $VICECITY on one side and $WASTED on the other. No SOL in the middle.</li>
+      <li><b>Buys route through the parent</b>A swap into $VICECITY ends up as $WASTED in the pool, so the two charts are tied together.</li>
+      <li><b>Check it yourself</b>Open the pool on Solscan or DexScreener and look at the quote token. It's the $WASTED contract.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="fumblers" class="fum-sec">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="color:#ff6b62">Public on-chain trade data</div>
+    <h2>Hall of <em>Fumblers</em></h2>
+    <p class="lede">The biggest paper-handed $VICECITY sells, checked on-chain, and what those bags would be worth at the live price.</p>
+    <div class="fum-total"><b id="fumTotal">–</b><span id="fumSub">Loading checked sells…</span></div>
+    <div class="fum-tick" aria-hidden="true"><div id="fumTick"></div></div>
+    <div class="podium" id="fumPodium"></div>
+    <div class="tscroll fum-table" id="fumTableBox" style="display:none"><table>
+      <thead><tr><th>#</th><th>Sold</th><th>Got</th><th>Worth now</th><th>Fumbled since</th><th>Wallet</th><th>When</th><th>Tx</th></tr></thead>
+      <tbody id="fumRows"></tbody>
+    </table></div>
+    <p class="src" id="fumCover"></p>
+    <p class="src"><b>How this works:</b> sells come from GeckoTerminal's public trade feed and each one is checked on Solana mainnet (finalized, no error, the wallet's $VICECITY balance went down). "Fumbled" is tokens sold × the live price, minus the USD value at the sale. If the price is lower now, it shows as a lucky exit. It's the value of the sold tokens only, not anyone's profit or loss, and not a prediction. Wallets are shortened. It's about trades, not people, so don't go hunting for wallet owners.</p>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="wrap reveal">
+    <div class="eyebrow">Pause menu</div>
+    <h2>The <em>stats</em></h2>
+    <p class="lede">Fair launch on pump.fun. Price and volume live in the section above.</p>
+    <div class="cards">
+      <div class="card"><div class="k">Total supply</div><div class="v">969M</div><div class="s">Current on-chain supply</div></div>
+      <div class="card"><div class="k">Chain</div><div class="v">Solana</div><div class="s">SPL Token-2022 mint</div></div>
+      <div class="card"><div class="k">DEX</div><div class="v">PumpSwap</div><div class="s">Graduated Nov 14, 2026</div></div>
+      <div class="card"><div class="k">Pair</div><div class="v">WASTED</div><div class="s">Not a SOL pair</div></div>
+      <div class="card"><div class="k">Mint authority</div><div class="v">Revoked</div><div class="s">No one can mint more</div></div>
+      <div class="card"><div class="k">Freeze authority</div><div class="v">None</div><div class="s">Wallets can't be frozen</div></div>
+    </div>
+    <div class="ca">
+      <code id="caText"></code>
+      <button class="btn primary sm" data-copy>Copy CA</button>
+    </div>
+    <div class="links">
+      <a class="btn sm" data-href="solscan" target="_blank" rel="noopener">↗ Solscan token</a>
+      <a class="btn sm" data-href="dex" target="_blank" rel="noopener">↗ DexScreener</a>
+      <a class="btn sm" data-href="gecko" target="_blank" rel="noopener">↗ GeckoTerminal</a>
+      <a class="btn sm" data-href="x" target="_blank" rel="noopener">↗ Search CA on X</a>
+    </div>
+    <p class="src">Supply, mint and freeze authority read on-chain with Solana RPC <span class="mono">getAccountInfo</span> on Nov 14, 2026 (both authorities are null). Graduation date from GeckoTerminal. Check them yourself on Solscan.</p>
+  </div>
+</section>
+
+<section id="countdown">
+  <div class="wrap reveal">
+    <div class="eyebrow">Countdown</div>
+    <h2>Next stop: <em>Vice City</em></h2>
+    <p class="lede">Grand Theft Auto VI launches November 19, 2026 (per Rockstar Games). The whole internet is about to be talking about one city.</p>
+    <div class="count" id="count">
+      <div><b id="cd">–</b><span>Days</span></div>
+      <div><b id="ch">–</b><span>Hours</span></div>
+      <div><b id="cm">–</b><span>Min</span></div>
+      <div><b id="cs">–</b><span>Sec</span></div>
+    </div>
+    <p class="src">Countdown targets midnight Eastern Time on the announced release date. $VICECITY is a fan meme coin, not affiliated with, endorsed by, or connected to Rockstar Games or Take-Two Interactive.</p>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="wrap reveal">
+    <div class="eyebrow">How to buy</div>
+    <h2>Get in <em>the car</em></h2>
+    <p class="lede">Four steps, about five minutes.</p>
+    <div class="steps">
+      <div class="step"><h3>Get Phantom</h3><p>Install Phantom from phantom.com or your phone's official app store.</p></div>
+      <div class="step"><h3>Add SOL</h3><p>Buy SOL in Phantom or on an exchange, then send it to your Phantom address.</p></div>
+      <div class="step"><h3>Swap for $VICECITY</h3><p>Open pump.fun, paste the CA and swap. The route goes through $WASTED on its way in.</p></div>
+      <div class="step"><h3>Meet the parent</h3><p>Read up on $WASTED too. The two coins share a pool, so they share a ride.</p></div>
+    </div>
+    <div class="links">
+      <a class="btn primary" data-href="pump" target="_blank" rel="noopener">pump.fun</a>
+      <a class="btn" data-href="jup" target="_blank" rel="noopener">Jupiter swap</a>
+      <a class="btn cyan" data-href="dex" target="_blank" rel="noopener">DexScreener chart</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap reveal">
+    <div class="eyebrow">FAQ</div>
+    <h2>Questions</h2>
+    <details><summary>What is $VICECITY?</summary><p>A meme coin on Solana, launched on pump.fun on Nov 13, 2026. No utility and no promises. Its pool is paired with $WASTED instead of SOL.</p></details>
+    <details><summary>How is it connected to $WASTED?</summary><p>On-chain. The PumpSwap pool holds $VICECITY and $WASTED, so $VICECITY is priced in $WASTED and trades route through it. You can confirm the quote token on Solscan or DexScreener.</p></details>
+    <details><summary>Why pair with $WASTED instead of SOL?</summary><p>It ties the two together. Liquidity for $VICECITY sits in $WASTED, so activity here shows up there.</p></details>
+    <details><summary>Is the contract safe?</summary><p>It's a standard pump.fun token that graduated to PumpSwap. Mint and freeze authority are both null. Always check the CA (2afcRh…Po8pump) before buying. Nobody legit will ever ask for your recovery phrase. DYOR.</p></details>
+    <details><summary>Is this affiliated with GTA or Rockstar?</summary><p>No. $VICECITY is an independent fan meme coin and is not affiliated with, endorsed by, or connected to Rockstar Games or Take-Two Interactive.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="brand" style="font-size:24px">Vice City</span></p>
+    <p>$VICECITY is a meme coin with no intrinsic value and no expectation of financial return. Nothing on this page is financial advice. Meme coins are extremely volatile and you can lose everything you put in. Not affiliated with Rockstar Games or Take-Two Interactive. The background footage is original AI-generated video, not game footage.</p>
+    <p class="mono" id="footCa"></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status">Contract copied</div>
+
+<script>
+const CA   = "2afcRhtGYgp1e3xPBMu2UbnELL8AUMZzguLQsPo8pump";
+const POOL = "7xLmwsPbCSMVvfFQ9JuhMwfbkehJA3mswshVBBWcJ1j2";
+const W_POOL = "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN";
+const LAUNCH = new Date("2026-11-19T00:00:00-05:00");
+
+const HREF = {
+  pump: "https://pump.fun/coin/" + CA,
+  dex: "https://dexscreener.com/solana/" + POOL.toLowerCase(),
+  gecko: "https://www.geckoterminal.com/solana/pools/" + POOL,
+  solscan: "https://solscan.io/token/" + CA,
+  solscanPool: "https://solscan.io/account/" + POOL,
+  jup: "https://jup.ag/swap/SOL-" + CA,
+  x: "https://x.com/search?q=" + CA
+};
+document.querySelectorAll("[data-href]").forEach(a => a.href = HREF[a.dataset.href]);
+document.getElementById("caText").textContent = CA;
+document.getElementById("footCa").textContent = "CA: " + CA;
+document.getElementById("chartFrame").src = HREF.dex + "?embed=1&theme=dark&info=0&trades=0";
+
+const $ = id => document.getElementById(id);
+const toast = $("toast");
+document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(CA); }
+  catch { const t = document.createElement("textarea"); t.value = CA; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
+  toast.classList.add("on"); setTimeout(() => toast.classList.remove("on"), 1600);
+}));
+
+const usd = n => n == null ? "–" : n >= 1e9 ? "$" + (n/1e9).toFixed(2) + "B" : n >= 1e6 ? "$" + (n/1e6).toFixed(2) + "M" : n >= 1e3 ? "$" + (n/1e3).toFixed(1) + "K" : "$" + n.toFixed(2);
+const num = n => n == null ? "–" : n >= 1e9 ? (n/1e9).toFixed(2) + "B" : n >= 1e6 ? (n/1e6).toFixed(2) + "M" : n >= 1e3 ? (n/1e3).toFixed(1) + "K" : (+n).toFixed(0);
+const px = s => { const n = +s; if (!n) return "–"; return "$" + (n < 0.01 ? n.toPrecision(3) : n.toFixed(4)); };
+function pct(el, v) {
+  if (v == null) { el.textContent = "–"; el.className = ""; return; }
+  el.textContent = (v >= 0 ? "▲ +" : "▼ ") + v.toFixed(1) + "%";
+  el.className = v >= 0 ? "up" : "down";
+}
+async function pair(addr) {
+  const r = await fetch("https://api.dexscreener.com/latest/dex/pairs/solana/" + addr);
+  const j = await r.json();
+  return j.pair || (j.pairs && j.pairs[0]);
+}
+
+async function refresh() {
+  try {
+    const [v, w] = await Promise.all([pair(POOL), pair(W_POOL).catch(() => null)]);
+    if (v) {
+      const pc = v.priceChange || {}, t = (v.txns || {}).h24 || {}, vol = v.volume || {}, lq = v.liquidity || {};
+      pct($("c1h"), pc.h1); pct($("c6h"), pc.h6); pct($("c24h"), pc.h24);
+      vicePrice = +v.priceUsd; renderFum();
+      $("price").textContent = px(v.priceUsd);
+      $("priceW").textContent = (+v.priceNative).toPrecision(3) + " WASTED";
+      $("mc").textContent = usd(v.marketCap ?? v.fdv);
+      $("liq").textContent = usd(lq.usd);
+      $("liqW").textContent = num(lq.quote) + " WASTED in pool";
+      $("vol").textContent = usd(vol.h24);
+      $("vol1h").textContent = "Last hour " + usd(vol.h1);
+      const tot = (t.buys || 0) + (t.sells || 0);
+      $("txns").textContent = (t.buys ?? 0).toLocaleString() + "/" + (t.sells ?? 0).toLocaleString();
+      $("txnsS").textContent = tot ? Math.round(t.buys / tot * 100) + "% buys · " + tot.toLocaleString() + " trades" : "–";
+      $("vPrice").textContent = px(v.priceUsd);
+      $("vMc").textContent = usd(v.marketCap ?? v.fdv);
+      $("vW").textContent = (+v.priceNative).toPrecision(3);
+      $("vPool").textContent = num(lq.quote);
+      $("heroChip").textContent = "Live · " + usd(v.marketCap ?? v.fdv) + " MC · paired with $WASTED";
+      document.title = "$VICECITY · " + usd(v.marketCap ?? v.fdv) + " MC";
+    }
+    if (w) {
+      $("wPrice").textContent = px(w.priceUsd);
+      $("wMc").textContent = usd(w.marketCap ?? w.fdv);
+      pct($("w24"), (w.priceChange || {}).h24);
+      $("wLiq").textContent = usd((w.liquidity || {}).usd);
+    }
+    if (v) {
+      const items = [["$VICECITY", px(v.priceUsd)], ["MC", usd(v.marketCap ?? v.fdv)], ["24H VOL", usd((v.volume || {}).h24)], ["PAIRED WITH", "$WASTED"], ["1 VICECITY", (+v.priceNative).toPrecision(3) + " WASTED"]];
+      if (w) items.push(["$WASTED MC", usd(w.marketCap ?? w.fdv)]);
+      items.push(["CA", CA.slice(0, 6) + "…" + CA.slice(-6)]);
+      const tk = $("ticker"); tk.textContent = "";
+      for (let n = 0; n < 2; n++) for (const [k, val] of items) { const sp = document.createElement("span"), b = document.createElement("b"); sp.textContent = k + " "; b.textContent = val; sp.append(b); tk.append(sp); }
+    }
+    $("updated").textContent = "Updated " + new Date().toLocaleTimeString();
+  } catch (e) {
+    $("updated").textContent = "Data feed unavailable, retrying…";
+  }
+}
+
+const ago = ts => { const s = Math.max(0, (Date.now() - new Date(ts)) / 1000); return s < 60 ? Math.floor(s) + "s" : s < 3600 ? Math.floor(s/60) + "m" : s < 86400 ? Math.floor(s/3600) + "h" : Math.floor(s/86400) + "d"; };
+async function trades() {
+  try {
+    const r = await fetch("https://api.geckoterminal.com/api/v2/networks/solana/pools/" + POOL + "/trades");
+    const rows = ((await r.json()).data || []).slice(0, 40);
+    if (!rows.length) return;
+    const tb = $("trades"); tb.textContent = "";
+    for (const { attributes: a } of rows) {
+      const buy = a.kind === "buy";
+      const amt = buy ? a.to_token_amount : a.from_token_amount;
+      const w = a.tx_from_address || "";
+      const tr = document.createElement("tr");
+      const cells = [buy ? "BUY" : "SELL", num(+amt), usd(+a.volume_in_usd), w.slice(0,4) + "…" + w.slice(-4), ago(a.block_timestamp)];
+      cells.forEach((c, i) => { const td = document.createElement("td"); td.textContent = c; if (i === 0) td.className = buy ? "up" : "down"; tr.append(td); });
+      tr.style.cursor = "pointer";
+      tr.addEventListener("click", () => window.open("https://solscan.io/tx/" + a.tx_hash, "_blank", "noopener"));
+      tb.append(tr);
+    }
+    $("tradesBox").style.display = "block";
+  } catch {}
+}
+
+function tick() {
+  let s = Math.max(0, Math.floor((LAUNCH - Date.now()) / 1000));
+  $("cd").textContent = Math.floor(s / 86400);
+  $("ch").textContent = Math.floor(s % 86400 / 3600);
+  $("cm").textContent = Math.floor(s % 3600 / 60);
+  $("cs").textContent = s % 60;
+}
+
+let FUM = null, vicePrice = 0;
+const short = a => a.slice(0, 4) + "…" + a.slice(-4);
+const money = n => (n < 0 ? "−$" : "$") + Math.abs(n).toLocaleString("en-US", { maximumFractionDigits: Math.abs(n) < 100 ? 2 : 0 });
+const TIERS = [[0, "Lucky exit", "t0"], [.25, "Paper hands", "t1"], [.75, "Shaking", "t2"], [1.5, "Certified fumbler", "t3"], [Infinity, "Wasted", "t4"]];
+const tierOf = p => p < 0 ? TIERS[0] : TIERS.find((t, i) => i > 0 && p < t[0]);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const when = ts => new Date(ts).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+function renderFum() {
+  if (!FUM || !vicePrice) return;
+  const rows = FUM.sells.map(s => ({ ...s, now: s.tokens * vicePrice, fum: s.tokens * vicePrice - s.usd, pct: vicePrice / s.price - 1 })).sort((a, b) => b.fum - a.fum);
+  const losers = rows.filter(r => r.fum > 0), total = losers.reduce((t, r) => t + r.fum, 0);
+  $("fumTotal").textContent = money(total);
+  $("fumSub").textContent = losers.length
+    ? `left on the table by ${losers.length} of ${rows.length} checked sells, at the live $VICECITY price. And counting.`
+    : `Nobody on the list has fumbled at this price. All ${rows.length} checked sells got out higher.`;
+  const tick = $("fumTick"); tick.textContent = "";
+  const tl = (losers.length ? losers : rows).slice(0, 16);
+  for (let n = 0; n < 2; n++) for (const r of tl) { const sp = el("span", null, short(r.wallet) + (r.fum > 0 ? " fumbled " : " dodged ")); sp.append(el("b", null, money(Math.abs(r.fum)))); tick.append(sp); }
+  const top = rows.slice(0, 15), pod = $("fumPodium"); pod.textContent = "";
+  top.slice(0, 3).forEach((r, i) => {
+    const c = el("div", "fum-card"), t = tierOf(r.pct);
+    c.append(el("div", "rk", ["#1 · Biggest fumble", "#2 · Runner-up", "#3 · Third place"][i]));
+    c.append(el("div", "big" + (r.fum < 0 ? " dodge" : ""), (r.fum >= 0 ? "+" : "") + money(r.fum)));
+    c.append(el("p", null, `Sold ${num(r.tokens)} $VICECITY for ${money(r.usd)} (${num(r.wasted)} WASTED). That bag is ${money(r.now)} now.`));
+    const w = el("div", "w"); w.append(el("span", null, short(r.wallet) + " · " + when(r.ts)), el("span", "tier " + t[2], t[1])); c.append(w);
+    const a = el("a", null, "View transaction ↗"); a.href = "https://solscan.io/tx/" + r.tx; a.target = "_blank"; a.rel = "noopener"; a.style.fontSize = "12px"; c.append(a);
+    pod.append(c);
+  });
+  const tb = $("fumRows"); tb.textContent = "";
+  top.slice(3).forEach((r, i) => {
+    const tr = el("tr");
+    [i + 4, num(r.tokens), money(r.usd), money(r.now)].forEach(v => tr.append(el("td", null, v)));
+    tr.append(el("td", r.fum >= 0 ? "neg" : "pos", (r.fum >= 0 ? "+" : "") + money(r.fum) + " (" + (r.pct >= 0 ? "+" : "") + (r.pct * 100).toFixed(0) + "%)"));
+    tr.append(el("td", null, short(r.wallet)), el("td", null, when(r.ts)));
+    const td = el("td"), a = el("a", null, "↗"); a.href = "https://solscan.io/tx/" + r.tx; a.target = "_blank"; a.rel = "noopener"; td.append(a); tr.append(td);
+    tb.append(tr);
+  });
+  $("fumTableBox").style.display = top.length > 3 ? "block" : "none";
+  $("fumCover").textContent = `${rows.length} checked sells from ${when(FUM.from)} to ${when(FUM.to)} (your local time). Data as of ${when(FUM.generated)}. Live price ${px(vicePrice)} from DexScreener.`;
+}
+fetch("fumblers.json").then(r => r.ok ? r.json() : Promise.reject()).then(j => { FUM = j; renderFum(); })
+  .catch(() => { $("fumSub").textContent = "No checked sells yet. Run tools/fumblers.py to build the list."; });
+const stamp = $("stamp");
+new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { stamp.classList.remove("go"); void stamp.offsetWidth; stamp.classList.add("go"); } }), { threshold: .2 }).observe($("fumblers"));
+
+document.documentElement.classList.add("js");
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); }), { threshold: .12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+const mo = new MutationObserver(ms => ms.forEach(m => { const el = m.target.nodeType === 1 ? m.target : m.target.parentElement; if (!el) return; el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); }));
+document.querySelectorAll(".card .v, .coin dd").forEach(el => mo.observe(el, { childList: true, characterData: true, subtree: true }));
+
+refresh(); trades(); tick();
+setInterval(refresh, 20000); setInterval(trades, 30000); setInterval(tick, 1000);
+</script>
+<script>
+(function () {
+  var d = document.documentElement; if (!d.classList.contains("has3d")) return;
+  var s = document.createElement("script");
+  if (d.classList.contains("reel")) s.src = "reel.js"; else { s.type = "module"; s.src = "city.js"; }
+  document.body.append(s);
+})();
+</script>
+</body>
+</html>
